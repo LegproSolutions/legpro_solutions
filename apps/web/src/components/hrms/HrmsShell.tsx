@@ -45,7 +45,7 @@ export function HrmsShell({ children }: { children: React.ReactNode }) {
       >
         <div className="flex h-16 items-center justify-between border-b border-slate-200 px-4 dark:border-white/10">
           <Link href="/hrms" className="flex items-center gap-2 font-display text-sm font-bold tracking-tight text-gradient">
-            <Image src="/legpro-logo.png" alt="LEGPRO HRMS" width={180} height={42} className="h-8 w-auto object-contain" priority />
+            <Image src="/legpro-logo.png" alt="LEGPRO HRMS" width={200} height={48} className="h-10 w-[180px] object-contain" priority />
           </Link>
           <button type="button" className="rounded-lg p-2 lg:hidden" onClick={() => setSidebarOpen(false)}>
             <X size={20} />

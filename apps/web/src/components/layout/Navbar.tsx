@@ -102,11 +102,11 @@ export function Navbar() {
       <nav className="mx-auto flex h-[76px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex shrink-0 items-center gap-3">
           <Image
-            src="/legpro-logo.svg"
+            src="/legpro-logo.png"
             alt={site.company.brandLine}
-            width={200}
-            height={48}
-            className="h-10 w-auto sm:h-11"
+            width={280}
+            height={64}
+            className="h-12 w-[220px] sm:h-14 sm:w-[260px] object-contain"
             priority
           />
           <span className="hidden font-display text-xs font-semibold leading-tight text-slate-400 xl:block">
