@@ -1,0 +1,198 @@
+{
+  "company": {
+    "name": "Legpro Solutions",
+    "legalName": "Legpro Consultants Private Limited",
+    "tagline": "Your Trusted Recruitment Partner",
+    "headline": "Delivering Tailored Staffing Solutions",
+    "description": "LEGpro specializes in crafting secure and flexible recruiting solutions for various industries. With over five years of experience, we streamline the hiring process to connect businesses with the right candidates efficiently.",
+    "phone": "9205959866",
+    "phoneDisplay": "+91 92059 59866",
+    "email": "Jobmela@legpro.co.in",
+    "website": "https://legpro.co.in",
+    "brandLine": "LEGPRO Staffing | Learning",
+    "jobMelaPortal": "https://jobmela.co.in",
+    "whatsapp": "919205959866",
+    "address": "Ghaziabad, Uttar Pradesh, India",
+    "hours": "Mon–Sat, 9:00 AM – 6:00 PM"
+  },
+  "hero": {
+    "eyebrow": "Your Trusted Recruitment Partner",
+    "headline": "Delivering Tailored Staffing Solutions",
+    "subheadline": "Innovative recruitment strategies that reduce time-to-hire and cost-per-hire while enhancing workforce quality across diverse industries.",
+    "ctaPrimary": "Hire Talent",
+    "ctaSecondary": "View Open Jobs"
+  },
+  "about": {
+    "title": "Legpro: Talent Acquisition",
+    "overview": "LEGpro specializes in crafting secure and flexible recruiting solutions for various industries. With over five years of experience, we streamline the hiring process to connect businesses with the right candidates efficiently.",
+    "highlight": "Our innovative recruitment strategies have significantly reduced time-to-hire and cost-per-hire for our clients while enhancing workforce quality and productivity.",
+    "mission": {
+      "title": "Our Mission Statement",
+      "text": "At LEGpro, our mission is to provide customized talent acquisition strategies that meet the unique needs of each client, ensuring they secure the best talent while maximizing efficiency and effectiveness in recruitment."
+    },
+    "values": {
+      "title": "Values That Define Us",
+      "items": [
+        "Integrity in every engagement",
+        "Collaboration with client teams",
+        "Excellence in delivery and outcomes",
+        "Transparency and trusted partnerships"
+      ]
+    },
+    "journey": {
+      "title": "A Legacy of Excellence in Recruitment",
+      "text": "Founded over five years ago, LEGpro emerged as a leader in recruitment solutions, pioneering methods that prioritize client needs and security. From humble beginnings, we have expanded our reach and expertise, solidifying our position as a trusted partner for businesses in diverse industries."
+    },
+    "timeline": [
+      { "year": "Year 1", "label": "Founded with a vision to transform staffing" },
+      { "year": "Growth", "label": "Expanded across diverse industries" },
+      { "year": "Innovation", "label": "Pioneered secure, tailored hiring methods" },
+      { "year": "Today", "label": "Trusted partner for workforce excellence" }
+    ],
+    "stats": [
+      { "value": 5, "suffix": "+", "label": "Years of Experience" },
+      { "value": 100, "suffix": "+", "label": "Successful Placements" },
+      { "value": 50, "suffix": "+", "label": "Partner Companies" },
+      { "value": 10, "suffix": "+", "label": "Industry Sectors" }
+    ]
+  },
+  "services": [
+    {
+      "id": "permanent",
+      "number": "01",
+      "title": "Permanent Staffing Solutions",
+      "description": "Connect with top talent for long-term positions. We understand your culture and requirements to find candidates who fit seamlessly—with a focus on quality over quantity.",
+      "icon": "Briefcase"
+    },
+    {
+      "id": "contract",
+      "number": "02",
+      "title": "Contract Staffing Services",
+      "description": "Rapid access to skilled professionals for temporary or project-based roles. We handle sourcing, vetting, and onboarding so you stay productive without long-term commitment.",
+      "icon": "Clock"
+    },
+    {
+      "id": "talent-acquisition",
+      "number": "03",
+      "title": "Talent Acquisition Strategies",
+      "description": "Tailored strategies for your organization's unique goals. We apply industry best practices and innovative technologies to attract the right talent and strengthen your employer brand.",
+      "icon": "Target"
+    },
+    {
+      "id": "vetting",
+      "number": "04",
+      "title": "Vetting and Compliance Services",
+      "description": "Thorough background checks, reference verifications, and compliance assessments to mitigate hiring risks and maintain a trustworthy workforce.",
+      "icon": "ShieldCheck"
+    },
+    {
+      "id": "apprenticeship",
+      "number": "05",
+      "title": "NAPS, NATS & B.Voc Solutions",
+      "description": "Government-aligned apprenticeship and vocational programs bridging education and industry—enhancing employability and workforce readiness.",
+      "icon": "GraduationCap",
+      "details": [
+        "NAPS: National Apprenticeship Promotion Scheme — on-the-job training with industry support.",
+        "NATS: National Apprenticeship Training Scheme — practical training for technical graduates.",
+        "B.Voc: Skill-based undergraduate programs with multiple exit options."
+      ]
+    },
+    {
+      "id": "it-hiring",
+      "number": "06",
+      "title": "IT & Non-IT Hiring",
+      "description": "End-to-end hiring across IT and non-IT roles—from skilled trades and manufacturing to corporate and technology positions across India.",
+      "icon": "Cpu"
+    }
+  ],
+  "training": [
+    {
+      "id": "english",
+      "title": "English Training",
+      "description": "Workplace communication and professional English skills to improve interview readiness and on-the-job performance.",
+      "icon": "Languages"
+    },
+    {
+      "id": "certification",
+      "title": "Certification Programs",
+      "description": "Industry-aligned certification pathways designed to validate skills and boost employability.",
+      "icon": "Award"
+    },
+    {
+      "id": "skills",
+      "title": "Skill Development Courses",
+      "description": "Hands-on programs for ITI, Diploma, and skilled professionals—aligned with employer needs and apprenticeship schemes.",
+      "icon": "Wrench"
+    }
+  ],
+  "whyUs": {
+    "title": "Why Choose Legpro",
+    "points": [
+      "Tailored recruitment strategies—not one-size-fits-all",
+      "Quality over quantity in every placement",
+      "Rigorous vetting and compliance assurance",
+      "Reduced time-to-hire and hiring costs",
+      "Expertise across IT and non-IT sectors",
+      "Trusted by leading industry partners"
+    ],
+    "stats": [
+      { "value": 95, "suffix": "%", "label": "Client Satisfaction" },
+      { "value": 48, "suffix": "hr", "label": "Avg. Response Time" },
+      { "value": 100, "suffix": "+", "label": "Roles Filled" },
+      { "value": 5, "suffix": "+", "label": "Years Trusted" }
+    ]
+  },
+  "partners": [
+    "UEL",
+    "Veira",
+    "New Holland",
+    "Lava",
+    "ITC",
+    "SMR",
+    "Overdrive"
+  ],
+  "social": {
+    "facebook": "https://www.facebook.com/profile.php?id=61581203214167",
+    "instagram": "https://www.instagram.com/jobmela.co/",
+    "linkedin": "https://www.linkedin.com/company/job-mela/"
+  },
+  "footer": {
+    "description": "Legpro Solutions, powered by Legpro Consultants Pvt. Ltd., delivers tailored recruitment, staffing, and skill-development programs—connecting businesses with quality talent across India."
+  },
+  "navigation": {
+    "about": [
+      { "label": "Company Overview", "href": "/#about" },
+      { "label": "Mission & Values", "href": "/#about" },
+      { "label": "Our Journey", "href": "/#about" },
+      { "label": "Why Choose Us", "href": "/#why-us" },
+      { "label": "Clients & Partners", "href": "/#clients" }
+    ],
+    "portals": [
+      {
+        "label": "Job Mela",
+        "href": "https://jobmela.co.in",
+        "description": "Browse openings, apply for jobs & manage your profile",
+        "external": true
+      },
+      {
+        "label": "Corporate Website",
+        "href": "https://legpro.co.in",
+        "description": "Legpro corporate presence",
+        "external": true
+      },
+      {
+        "label": "Employer Portal",
+        "href": "/jobs",
+        "description": "Post jobs and manage applications",
+        "external": false,
+        "comingSoon": true
+      },
+      {
+        "label": "Training Portal",
+        "href": "/#training",
+        "description": "English, certification & skill programs",
+        "external": false
+      }
+    ]
+  }
+}
