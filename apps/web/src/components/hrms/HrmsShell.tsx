@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Bell, Search, Moon, Sun, LogOut } from "lucide-react";
@@ -43,8 +44,8 @@ export function HrmsShell({ children }: { children: React.ReactNode }) {
         )}
       >
         <div className="flex h-16 items-center justify-between border-b border-slate-200 px-4 dark:border-white/10">
-          <Link href="/hrms" className="font-display text-sm font-bold tracking-tight text-gradient">
-            LEGPRO HRMS
+          <Link href="/hrms" className="flex items-center gap-2 font-display text-sm font-bold tracking-tight text-gradient">
+            <Image src="/legpro-logo.png" alt="LEGPRO HRMS" width={180} height={42} className="h-8 w-auto object-contain" priority />
           </Link>
           <button type="button" className="rounded-lg p-2 lg:hidden" onClick={() => setSidebarOpen(false)}>
             <X size={20} />
