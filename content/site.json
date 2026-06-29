@@ -1,18 +1,18 @@
 {
   "company": {
-    "name": "Legpro Solutions",
-    "legalName": "Legpro Consultants Private Limited",
+    "name": "LEGPRO Services",
+    "legalName": "LEGPRO Services Private Limited",
     "tagline": "Your Trusted Recruitment Partner",
     "headline": "Delivering Tailored Staffing Solutions",
     "description": "LEGpro specializes in crafting secure and flexible recruiting solutions for various industries. With over five years of experience, we streamline the hiring process to connect businesses with the right candidates efficiently.",
-    "phone": "9205959866",
-    "phoneDisplay": "+91 92059 59866",
-    "email": "Jobmela@legpro.co.in",
+    "phone": "7303086551",
+    "phoneDisplay": "+91 73030 86551",
+    "email": "Prashant@legpro.co.in",
     "website": "https://legpro.co.in",
     "brandLine": "LEGPRO Staffing | Learning",
     "jobMelaPortal": "https://jobmela.co.in",
-    "whatsapp": "919205959866",
-    "address": "Ghaziabad, Uttar Pradesh, India",
+    "whatsapp": "917303086551",
+    "address": "G-05, H-36, Sector-63, Noida, Uttar Pradesh, 201301, India",
     "hours": "Mon–Sat, 9:00 AM – 6:00 PM"
   },
   "hero": {
@@ -58,51 +58,53 @@
   },
   "services": [
     {
-      "id": "permanent",
+      "id": "naps",
       "number": "01",
-      "title": "Permanent Staffing Solutions",
-      "description": "Connect with top talent for long-term positions. We understand your culture and requirements to find candidates who fit seamlessly—with a focus on quality over quantity.",
-      "icon": "Briefcase"
+      "title": "NAPS",
+      "description": "National Apprenticeship Promotion Scheme — Government-backed scheme to promote apprenticeship training. We help organisations onboard and manage apprentices under NAPS, ensuring full compliance with the Apprentices Act.",
+      "icon": "GraduationCap"
     },
     {
-      "id": "contract",
+      "id": "nats-boat",
       "number": "02",
-      "title": "Contract Staffing Services",
-      "description": "Rapid access to skilled professionals for temporary or project-based roles. We handle sourcing, vetting, and onboarding so you stay productive without long-term commitment.",
-      "icon": "Clock"
+      "title": "NATS / BOAT",
+      "description": "National Apprenticeship Training Scheme — Facilitating technical apprenticeship training through BOAT/BOPT portals. Ideal for engineering graduates and diploma holders seeking practical industry exposure.",
+      "icon": "BookOpen"
     },
     {
-      "id": "talent-acquisition",
-      "number": "03",
-      "title": "Talent Acquisition Strategies",
-      "description": "Tailored strategies for your organization's unique goals. We apply industry best practices and innovative technologies to attract the right talent and strengthen your employer brand.",
-      "icon": "Target"
-    },
-    {
-      "id": "vetting",
+      "id": "d-voc",
       "number": "04",
-      "title": "Vetting and Compliance Services",
-      "description": "Thorough background checks, reference verifications, and compliance assessments to mitigate hiring risks and maintain a trustworthy workforce.",
-      "icon": "ShieldCheck"
+      "title": "D.Voc",
+      "description": "2/3 Years Diploma in Vocational — Industry-aligned vocational diploma programs designed to equip students with hands-on skills and domain expertise in their chosen trade.",
+      "icon": "Award"
     },
     {
-      "id": "apprenticeship",
+      "id": "b-voc",
       "number": "05",
-      "title": "NAPS, NATS & B.Voc Solutions",
-      "description": "Government-aligned apprenticeship and vocational programs bridging education and industry—enhancing employability and workforce readiness.",
-      "icon": "GraduationCap",
-      "details": [
-        "NAPS: National Apprenticeship Promotion Scheme — on-the-job training with industry support.",
-        "NATS: National Apprenticeship Training Scheme — practical training for technical graduates.",
-        "B.Voc: Skill-based undergraduate programs with multiple exit options."
-      ]
+      "title": "B.Voc",
+      "description": "3 Year Bachelor in Vocational — A full 3-year undergraduate degree in vocational education, combining academic learning with practical training to produce job-ready graduates.",
+      "icon": "Users"
     },
     {
-      "id": "it-hiring",
+      "id": "aedp",
       "number": "06",
-      "title": "IT & Non-IT Hiring",
-      "description": "End-to-end hiring across IT and non-IT roles—from skilled trades and manufacturing to corporate and technology positions across India.",
-      "icon": "Cpu"
+      "title": "AEDP",
+      "description": "Apprenticeship Embedded Degree Program — A 3-year degree program where apprenticeship is embedded within the curriculum, allowing students to earn a degree while gaining real-world work experience.",
+      "icon": "Layers"
+    },
+    {
+      "id": "contractual-labour",
+      "number": "07",
+      "title": "Contractual Labour",
+      "description": "Reliable supply of skilled and semi-skilled contractual workforce for manufacturing, construction, logistics, and industrial sectors — fully compliant with all applicable labour laws.",
+      "icon": "HardHat"
+    },
+    {
+      "id": "pm-internship",
+      "number": "08",
+      "title": "PM Internship Program Facilitation",
+      "description": "Facilitating the Prime Minister's Internship Scheme. We bridge the gap between top corporate partners and youth seeking 12-month hands-on internships with monthly stipends.",
+      "icon": "Award"
     }
   ],
   "training": [
@@ -146,26 +148,39 @@
     "UEL",
     "Veira",
     "New Holland",
-    "Lava",
+    "LAVA",
     "ITC",
     "SMR",
-    "Overdrive"
+    "Overdrive",
+    "UFLEX",
+    "PMT EXIM",
+    "JIVA AYURVEDA",
+    "SG",
+    "ILJIN",
+    "CNH Industrial",
+    "Kanodia Group",
+    "ICICI Foundation",
+    "Tecno",
+    "Incise",
+    "Jupiter Laminators",
+    "Inkofix",
+    "JPan Tubular"
   ],
   "social": {
-    "facebook": "https://www.facebook.com/profile.php?id=61581203214167",
-    "instagram": "https://www.instagram.com/jobmela.co/",
-    "linkedin": "https://www.linkedin.com/company/job-mela/"
+    "facebook": "https://www.facebook.com/legproservices/",
+    "instagram": "https://www.instagram.com/legpr_oo/",
+    "linkedin": "https://www.linkedin.com/company/legpro-services/"
   },
   "footer": {
-    "description": "Legpro Solutions, powered by Legpro Consultants Pvt. Ltd., delivers tailored recruitment, staffing, and skill-development programs—connecting businesses with quality talent across India."
+    "description": ""
   },
   "navigation": {
     "about": [
-      { "label": "Company Overview", "href": "/#about" },
+      { "label": "Company Overview", "href": "/about/company-overview", "description": "Who we are, our expertise & mission" },
       { "label": "Mission & Values", "href": "/#about" },
       { "label": "Our Journey", "href": "/#about" },
       { "label": "Why Choose Us", "href": "/#why-us" },
-      { "label": "Clients & Partners", "href": "/#clients" }
+      { "label": "Partners", "href": "/#clients" }
     ],
     "portals": [
       {

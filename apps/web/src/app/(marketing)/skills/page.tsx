@@ -12,7 +12,7 @@ const icons = { Languages, Award, Wrench, BookOpen } as const;
 
 export default function SkillsPortalPage() {
   return (
-    <div className="min-h-screen bg-surface-dark pt-[72px]">
+    <div className="min-h-screen bg-surface-dark">
       <Container className="py-16">
         <p className="text-sm font-semibold uppercase tracking-wider text-accent">Job Skills Portal</p>
         <h1 className="mt-2 font-display text-4xl font-bold text-white md:text-5xl">

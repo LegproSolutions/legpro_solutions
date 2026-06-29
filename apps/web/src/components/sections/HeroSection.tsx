@@ -1,89 +1,239 @@
 "use client";
 
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
-import { site } from "@/lib/content";
-import { Container } from "@/components/ui/Section";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { TypewriterText } from "@/components/ui/TypewriterText";
+
+const slides = [
+  {
+    title: "Staffing Solutions",
+    description:
+      "Providing reliable and scalable workforce solutions to meet your business requirements efficiently across industries.",
+    image: "/service-contractual.png",
+  },
+  {
+    title: "Talent Acquisition",
+    description:
+      "Connecting organizations with skilled professionals through streamlined and effective recruitment processes.",
+    image: "/service-naps.png",
+  },
+  {
+    title: "Apprenticeship Programmes",
+    description:
+      "NAPS, NATS, B.Voc and customized apprenticeship solutions for building future-ready talent.",
+    image: "/service-aedp.png",
+  },
+  {
+    title: "Learning & Development",
+    description:
+      "Corporate training and learning solutions designed to enhance workforce productivity and growth.",
+    image: "/service-dvoc.png",
+  },
+];
 
 export function HeroSection() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(1); // 1 = next, -1 = prev
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
+
+  const startTimer = () => {
+    stopTimer();
+    timerRef.current = setInterval(() => {
+      setDirection(1);
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 5000);
+  };
+
+  const stopTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+  };
+
+  useEffect(() => {
+    startTimer();
+    return () => stopTimer();
+  }, []);
+
+  const handleNext = () => {
+    setDirection(1);
+    setCurrent((prev) => (prev + 1) % slides.length);
+    startTimer();
+  };
+
+  const handlePrev = () => {
+    setDirection(-1);
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+    startTimer();
+  };
+
+  // Slide variant definitions
+  const textContainerVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { staggerChildren: 0.15 } },
+    exit: { opacity: 0 },
+  };
+
+  const headingVariants = {
+    initial: { opacity: 0, x: -50 },
+    animate: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 100, damping: 20 } },
+  };
+
+  const descVariants = {
+    initial: { opacity: 0 },
+    animate: { opacity: 1, transition: { duration: 0.5 } },
+  };
+
   return (
-    <section
-      id="home"
-      className="relative flex min-h-screen items-center overflow-hidden pt-[72px] mesh-bg"
-    >
-      <div className="absolute inset-0 grid-pattern opacity-60" />
-      <Container className="relative z-10 py-16 lg:py-24">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
-              <Sparkles size={16} />
-              {site.hero.eyebrow}
-            </p>
-            <h1 className="font-display text-4xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-              Delivering{" "}
-              <span className="text-gradient">Tailored Staffing Solutions</span>
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-400">
-              {site.hero.subheadline}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/#contact" className="btn-primary">
-                {site.hero.ctaPrimary}
-                <ArrowRight size={18} />
+    <section id="home" className="relative w-full min-h-[85vh] lg:min-h-[90vh] overflow-hidden flex items-stretch">
+      <div className="grid w-full grid-cols-1 lg:grid-cols-12 items-stretch">
+
+        {/* Left Side (60%) - Solid Brand Background with Geometric Accents */}
+        <div className="lg:col-span-7 bg-gradient-to-br from-[#04142B] via-[#0A1F44] to-[#1E40FF] flex flex-col justify-center px-6 py-16 md:px-16 md:py-24 relative overflow-hidden text-white min-h-[50vh] lg:min-h-0">
+
+          {/* Subtle Geometric Background Shapes */}
+          <div className="absolute inset-0 pointer-events-none opacity-10">
+            <div className="absolute top-10 left-10 w-40 h-40 border border-white rounded-full" />
+            <div className="absolute -bottom-20 -right-20 w-80 h-80 border-4 border-white/50 rounded-3xl rotate-45" />
+            <div className="absolute top-1/3 right-10 w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent border-b-[50px] border-b-white" />
+          </div>
+
+          <div className="relative z-10 max-w-2xl space-y-6">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current}
+                variants={textContainerVariants}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                className="space-y-6"
+              >
+                <motion.h1
+                  variants={headingVariants}
+                  className="font-display text-4xl font-extrabold tracking-tight leading-tight sm:text-5xl lg:text-6xl text-white Poppins"
+                >
+                  <TypewriterText text={slides[current].title} cursorColor="#2dd4bf" />
+                </motion.h1>
+
+                {/* Thin divider line below heading */}
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={{ width: 64 }}
+                  transition={{ duration: 0.5 }}
+                  className="h-1 bg-teal-400 rounded-full"
+                />
+
+                <motion.p
+                  variants={descVariants}
+                  className="text-base sm:text-lg leading-relaxed text-slate-200"
+                >
+                  {slides[current].description}
+                </motion.p>
+              </motion.div>
+            </AnimatePresence>
+
+            <div className="flex flex-wrap gap-4 pt-6">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-xl bg-teal-500 hover:bg-teal-600 px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-teal-500/20 hover:scale-[1.03] transition-all duration-300"
+              >
+                Get Started
               </Link>
-              <Link href="/jobs" className="btn-secondary">
-                {site.hero.ctaSecondary}
+              <Link
+                href="/#services"
+                className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 px-8 py-3.5 text-sm font-semibold text-white transition-colors duration-300"
+              >
+                Explore Services
               </Link>
             </div>
-            <div className="mt-10 flex flex-wrap gap-6">
-              {["5+ Years", "Multi-Industry", "Compliance-First"].map((item) => (
-                <motion.div key={item} className="flex items-center gap-2 text-sm text-slate-400">
-                  <span className="h-2 w-2 rounded-full bg-accent" />
-                  {item}
-                </motion.div>
+          </div>
+
+          {/* Slider controls (Arrows & Indicators) */}
+          <div className="absolute bottom-6 left-6 right-6 md:left-16 md:right-16 flex items-center justify-between z-20">
+            {/* Dots */}
+            <div className="flex gap-2">
+              {slides.map((_, idx) => (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    setDirection(idx > current ? 1 : -1);
+                    setCurrent(idx);
+                    startTimer();
+                  }}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${idx === current ? "w-8 bg-teal-400" : "w-2.5 bg-white/30 hover:bg-white/50"
+                    }`}
+                  aria-label={`Go to slide ${idx + 1}`}
+                />
               ))}
             </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="relative hidden lg:block"
-          >
-            <div className="glass-card p-8">
-              <div className="space-y-4">
-                {[
-                  { label: "Time-to-Hire", value: "Reduced" },
-                  { label: "Cost-per-Hire", value: "Optimized" },
-                  { label: "Workforce Quality", value: "Enhanced" },
-                ].map((stat, i) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.4 + i * 0.1 }}
-                    className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-5 py-4"
-                  >
-                    <span className="text-slate-400">{stat.label}</span>
-                    <span className="font-semibold text-accent">{stat.value}</span>
-                  </motion.div>
-                ))}
-              </div>
-              <p className="mt-6 rounded-xl bg-gradient-to-r from-primary/20 to-accent/20 p-4 text-center text-sm text-slate-300">
-                Trusted recruitment partner across India
-              </p>
+            {/* Navigation Arrows */}
+            <div className="flex gap-3">
+              <button
+                onClick={handlePrev}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white hover:bg-white/25 active:scale-95 transition-all duration-300"
+                aria-label="Previous slide"
+              >
+                <ArrowLeft size={18} />
+              </button>
+              <button
+                onClick={handleNext}
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white hover:bg-white/25 active:scale-95 transition-all duration-300"
+                aria-label="Next slide"
+              >
+                <ArrowRight size={18} />
+              </button>
             </div>
-            <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-primary/20 blur-3xl" />
-            <div className="absolute -bottom-8 -left-8 h-32 w-32 rounded-full bg-accent/20 blur-3xl" />
-          </motion.div>
+          </div>
+
         </div>
-      </Container>
+
+        {/* Right Side (40%) - Image Section with Curved Arched Border Shape */}
+        <div className="lg:col-span-5 relative bg-white overflow-hidden min-h-[40vh] lg:min-h-0">
+
+          {/* Curved Arched SVG Mask */}
+          <div className="absolute inset-y-0 left-0 w-20 bg-transparent z-20 pointer-events-none hidden lg:block">
+            <svg
+              className="h-full w-full text-white fill-current"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            >
+              <path d="M100,0 C30,20 30,80 100,100 L0,100 L0,0 Z" />
+            </svg>
+          </div>
+
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={current}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.6 }}
+              className="absolute inset-0 w-full h-full"
+            >
+              <motion.div
+                animate={{ scale: [1, 1.04] }}
+                transition={{ duration: 5, ease: "easeOut" }}
+                className="relative w-full h-full"
+              >
+                <Image
+                  src={slides[current].image}
+                  alt={slides[current].title}
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                  priority
+                />
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Soft Dark Bottom Gradient for Mobile Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent lg:hidden" />
+        </div>
+
+      </div>
     </section>
   );
 }

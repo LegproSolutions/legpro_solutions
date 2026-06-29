@@ -61,20 +61,24 @@ export function PortalsMegaMenu({ activeMenu, setActiveMenu }: PortalsMegaMenuPr
   const toggle = () => setActiveMenu(open ? null : MENU_ID);
 
   return (
-    <li ref={ref} className="relative z-[60]">
+    <li ref={ref} className="relative z-[60] h-full flex items-center">
       <button
         type="button"
         onClick={toggle}
         onMouseEnter={() => setActiveMenu(MENU_ID)}
         className={cn(
-          "flex items-center gap-1 rounded-lg px-2 py-2 text-sm font-medium transition-colors",
-          open ? "text-white" : "text-slate-300 hover:text-white"
+          "relative group h-full flex items-center gap-1 px-4 text-[15px] font-semibold transition-colors duration-300",
+          open ? "text-primary" : "text-slate-700 hover:text-primary"
         )}
         aria-expanded={open}
         aria-haspopup="true"
       >
-        Portals
-        <ChevronDown size={16} className={cn("transition-transform duration-200", open && "rotate-180")} />
+        <span>Portals</span>
+        <ChevronDown size={14} className={cn("transition-transform duration-300 text-slate-500 group-hover:text-primary", open && "rotate-180")} />
+        <span className={cn(
+          "absolute bottom-0 left-1/2 h-[4px] -translate-x-1/2 rounded-t-full bg-primary transition-all duration-300",
+          open ? "w-8" : "w-0 group-hover:w-8"
+        )} />
       </button>
 
       <AnimatePresence>
@@ -84,14 +88,14 @@ export function PortalsMegaMenu({ activeMenu, setActiveMenu }: PortalsMegaMenuPr
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2 }}
-            className="absolute left-1/2 top-full z-[90] mt-3 w-[min(calc(100vw-2rem),56rem)] -translate-x-1/2 rounded-2xl border border-white/10 bg-gradient-to-br from-slate-950/98 via-slate-900/98 to-slate-950/98 p-4 shadow-2xl shadow-black/60 backdrop-blur-2xl sm:p-5"
+            className="absolute left-1/2 top-full z-[90] mt-1 w-[min(calc(100vw-2rem),56rem)] -translate-x-1/2 rounded-2xl border border-slate-100 bg-white p-4 shadow-[0_10px_40px_rgba(0,0,0,0.08)] backdrop-blur-2xl sm:p-5"
           >
             <div className="grid gap-3 sm:grid-cols-2">
               {portals.map((p) => {
                 const Icon = p.icon;
                 const cardClass = cn(
-                  "group relative flex flex-col rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition-all duration-300",
-                  "hover:border-primary/50 hover:bg-white/[0.07] hover:shadow-xl hover:shadow-primary/10"
+                  "group relative flex flex-col rounded-2xl border border-slate-100 bg-slate-50 p-4 transition-all duration-300",
+                  "hover:border-primary/30 hover:bg-slate-50/80 hover:shadow-lg hover:shadow-slate-100"
                 );
                 return (
                   <Link
@@ -103,10 +107,10 @@ export function PortalsMegaMenu({ activeMenu, setActiveMenu }: PortalsMegaMenuPr
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent text-white shadow-lg shadow-primary/25">
                       <Icon size={22} strokeWidth={1.75} />
                     </div>
-                    <h3 className="mt-3 font-display text-base font-semibold tracking-tight text-white">
+                    <h3 className="mt-3 font-display text-base font-semibold tracking-tight text-slate-800 transition-colors group-hover:text-primary">
                       {p.title}
                     </h3>
-                    <p className="mt-1.5 text-sm leading-relaxed text-slate-400">{p.description}</p>
+                    <p className="mt-1.5 text-sm leading-relaxed text-slate-500">{p.description}</p>
                   </Link>
                 );
               })}

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Search, MapPin, Briefcase, ArrowLeft } from "lucide-react";
 import { fetchJobs, type Job } from "@/lib/api";
 import { Container } from "@/components/ui/Section";
+import { TypewriterText } from "@/components/ui/TypewriterText";
 
 export default function JobsPage() {
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -35,12 +36,14 @@ export default function JobsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-surface-dark pt-[72px]">
+    <div className="min-h-screen bg-surface-dark">
       <Container className="py-12">
         <Link href="/" className="mb-8 inline-flex items-center gap-2 text-sm text-slate-400 hover:text-white">
           <ArrowLeft size={16} /> Back to Home
         </Link>
-        <h1 className="font-display text-4xl font-bold text-white">Job Mela — Open Positions</h1>
+        <h1 className="font-display text-4xl font-bold text-white">
+          <TypewriterText text="Job Mela — Open Positions" cursorColor="#0ea5e9" />
+        </h1>
         <p className="mt-2 text-slate-400">Search and apply for current job openings.</p>
 
         <form onSubmit={handleSearch} className="mt-8 glass-card p-6">

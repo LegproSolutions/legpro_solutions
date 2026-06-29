@@ -7,12 +7,17 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#2563eb",
-          hover: "#1d4ed8",
+          DEFAULT: "#1E40FF",
+          hover: "#1132d8",
         },
         accent: {
-          DEFAULT: "#10b981",
-          hover: "#059669",
+          DEFAULT: "#00C897",
+          hover: "#00a67d",
+        },
+        navy: {
+          DEFAULT: "#04142B",
+          light: "#0A1F44",
+          dark: "#020A16",
         },
         warm: "#f59e0b",
         surface: {

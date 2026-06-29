@@ -3,26 +3,53 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, Briefcase, GraduationCap, LayoutDashboard, Share2, ChevronDown } from "lucide-react";
+import { Menu, X, Briefcase, GraduationCap, LayoutDashboard, Share2, ChevronDown, BookOpen, Award, Users, Layers, HardHat } from "lucide-react";
 import { site } from "@/lib/content";
 import { NavDropdown, MobileNavGroup, type NavDropdownItem } from "./NavDropdown";
-import { PortalsMegaMenu } from "./PortalsMegaMenu";
 import { cn } from "@/lib/utils";
+import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const MENU_ABOUT = "about";
 const MENU_SERVICES = "services";
 const MENU_TRAINING = "training";
 const MENU_PORTALS_MOBILE = "portals-mobile";
 
+const iconMap: Record<string, any> = {
+  GraduationCap,
+  BookOpen,
+  Award,
+  Users,
+  Layers,
+  HardHat,
+};
+
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   const closeAllMenus = useCallback(() => {
     setActiveMenu(null);
     setMobileExpanded(null);
   }, []);
+
+  useEffect(() => {
+    closeAllMenus();
+    setMobileOpen(false);
+  }, [pathname, closeAllMenus]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -45,11 +72,13 @@ export function Navbar() {
     setActiveMenu(id);
   }, []);
 
-  const serviceItems: NavDropdownItem[] = site.services.map((s) => ({
-    label: s.title,
-    href: "/#services",
-    description: s.description.slice(0, 72) + (s.description.length > 72 ? "…" : ""),
-  }));
+  const serviceItems: NavDropdownItem[] = [
+    { label: "Talent Acquisition", href: "/talent-acquisition" },
+    { label: "Contractual Staffing", href: "/contractual-staffing" },
+    { label: "NAPS/NATS", href: "/naps-nats" },
+    { label: "BVoc./ DVoc.", href: "/bvoc-dvoc" },
+    { label: "Learning Skills", href: "/learning-staffing" },
+  ];
 
   const aboutItems: NavDropdownItem[] = site.navigation?.about ?? [];
 
@@ -93,46 +122,49 @@ export function Navbar() {
 
   return (
     <header
-      className={cn(
-        "sticky top-0 z-[100] w-full overflow-visible border-b border-white/10",
-        "bg-gradient-to-r from-slate-950/95 via-slate-900/90 to-slate-950/95",
-        "backdrop-blur-xl backdrop-saturate-150 shadow-lg shadow-black/20"
-      )}
+      className="fixed top-0 left-0 right-0 z-[100] w-full overflow-visible transition-all duration-300 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-md"
+      onMouseLeave={closeAllMenus}
     >
-      <nav className="mx-auto flex h-[76px] max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex shrink-0 items-center gap-3">
-          <Image
-            src="/legpro-logo.png"
-            alt={site.company.brandLine}
-            width={280}
-            height={64}
-            className="h-12 w-[220px] sm:h-14 sm:w-[260px] object-contain"
-            priority
-          />
-          <span className="hidden font-display text-xs font-semibold leading-tight text-slate-400 xl:block">
-            {site.company.brandLine}
-          </span>
-        </Link>
+      <nav className={cn(
+        "mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8 transition-all duration-300",
+        scrolled ? "h-[68px]" : "h-[84px]"
+      )}>
+        <div className="flex flex-1 justify-start">
+          <Link href="/" className="flex shrink-0 items-center">
+            <Image
+              src="/legpro-logo.png"
+              alt="LEGPRO Staffing | Learning"
+              width={320}
+              height={90}
+              className="h-[48px] w-auto sm:h-[58px] object-contain transition-transform duration-300 hover:scale-[1.02]"
+              priority
+            />
+          </Link>
+        </div>
 
-        <ul className="hidden items-center gap-1 lg:flex lg:gap-0 xl:gap-1">
-          <li>
+        <ul className="hidden h-full items-center gap-1 lg:flex lg:gap-0 xl:gap-1">
+          <li className="h-full flex items-center">
             <Link
               href="/"
-              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white"
+              className="relative group h-full flex items-center px-2 xl:px-4 text-sm xl:text-[15px] font-semibold text-slate-600 hover:text-blue-600 transition-colors duration-300"
               onMouseEnter={() => setActiveMenuExclusive(null)}
             >
-              Home
+              <span>Home</span>
+              <span className="absolute bottom-0 left-1/2 h-[4px] w-0 -translate-x-1/2 rounded-t-full bg-blue-600 transition-all duration-300 group-hover:w-8" />
             </Link>
           </li>
-          {aboutItems.length > 0 && (
-            <NavDropdown
-              menuId={MENU_ABOUT}
-              label="About Us"
-              items={aboutItems}
-              activeMenu={activeMenu}
-              setActiveMenu={setActiveMenuExclusive}
-            />
-          )}
+          
+          <li className="h-full flex items-center">
+            <Link
+              href="/about"
+              className="relative group h-full flex items-center px-2 xl:px-4 text-sm xl:text-[15px] font-semibold text-slate-600 hover:text-blue-600 transition-colors duration-300"
+              onMouseEnter={() => setActiveMenuExclusive(null)}
+            >
+              <span>About Us</span>
+              <span className="absolute bottom-0 left-1/2 h-[4px] w-0 -translate-x-1/2 rounded-t-full bg-blue-600 transition-all duration-300 group-hover:w-8" />
+            </Link>
+          </li>
+
           {serviceItems.length > 0 && (
             <NavDropdown
               menuId={MENU_SERVICES}
@@ -142,49 +174,37 @@ export function Navbar() {
               setActiveMenu={setActiveMenuExclusive}
             />
           )}
-          <PortalsMegaMenu activeMenu={activeMenu} setActiveMenu={setActiveMenuExclusive} />
-          {trainingItems.length > 0 && (
-            <NavDropdown
-              menuId={MENU_TRAINING}
-              label="Training"
-              items={trainingItems}
-              align="right"
-              activeMenu={activeMenu}
-              setActiveMenu={setActiveMenuExclusive}
-            />
-          )}
-          <li>
-            <Link
-              href="/#contact"
-              className="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition hover:bg-white/5 hover:text-white"
+
+          <li className="h-full flex items-center">
+            <a
+              href="https://www.jobmela.co.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative group h-full flex items-center px-2 xl:px-4 text-sm xl:text-[15px] font-semibold text-slate-600 hover:text-blue-600 transition-colors duration-300"
               onMouseEnter={() => setActiveMenuExclusive(null)}
             >
-              Contact
+              <span>Careers</span>
+              <span className="absolute bottom-0 left-1/2 h-[4px] w-0 -translate-x-1/2 rounded-t-full bg-blue-600 transition-all duration-300 group-hover:w-8" />
+            </a>
+          </li>
+
+          <li className="h-full flex items-center">
+            <Link
+              href="/contact"
+              className="relative group h-full flex items-center px-2 xl:px-4 text-sm xl:text-[15px] font-semibold text-slate-600 hover:text-blue-600 transition-colors duration-300"
+              onMouseEnter={() => setActiveMenuExclusive(null)}
+            >
+              <span>Contact Us</span>
+              <span className="absolute bottom-0 left-1/2 h-[4px] w-0 -translate-x-1/2 rounded-t-full bg-blue-600 transition-all duration-300 group-hover:w-8" />
             </Link>
           </li>
         </ul>
 
-        <div
-          className="hidden shrink-0 items-center gap-2 md:flex lg:gap-3"
-          onMouseEnter={() => setActiveMenuExclusive(null)}
-        >
-          <Link
-            href="/jobs"
-            className="rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white transition hover:border-primary/40 hover:bg-white/10"
-          >
-            Find Jobs
-          </Link>
-          <Link
-            href="/#contact"
-            className="rounded-xl bg-gradient-to-r from-primary to-accent px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition hover:opacity-95"
-          >
-            Hire Talent
-          </Link>
-        </div>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end" />
 
         <button
           type="button"
-          className="rounded-lg p-2 text-white lg:hidden"
+          className="rounded-lg p-2 text-slate-600 hover:text-blue-600 transition-colors active:scale-95 lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-expanded={mobileOpen}
           aria-label="Toggle menu"
@@ -192,29 +212,27 @@ export function Navbar() {
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </nav>
-
       {mobileOpen && (
-        <div className="max-h-[calc(100dvh-76px)] overflow-y-auto border-t border-white/10 bg-slate-950/98 px-4 py-6 lg:hidden">
-          <ul className="flex flex-col gap-1">
+        <div className="max-h-[calc(100dvh-76px)] overflow-y-auto border-t border-slate-100 bg-white px-4 py-6 lg:hidden shadow-2xl">
+          <ul className="flex flex-col gap-1 text-slate-800">
             <li>
               <Link
                 href="/"
-                className="block rounded-lg py-3 text-lg font-medium text-slate-200"
+                className="block rounded-lg py-3 text-lg font-semibold text-slate-800 hover:text-blue-600"
                 onClick={closeMobile}
               >
                 Home
               </Link>
             </li>
-            {aboutItems.length > 0 && (
-              <MobileNavGroup
-                menuId={MENU_ABOUT}
-                label="About Us"
-                items={aboutItems}
-                mobileExpanded={mobileExpanded}
-                setMobileExpanded={setMobileExpanded}
-                onNavigate={closeMobile}
-              />
-            )}
+            <li>
+              <Link
+                href="/about"
+                className="block rounded-lg py-3 text-lg font-semibold text-slate-800 hover:text-blue-600"
+                onClick={closeMobile}
+              >
+                About Us
+              </Link>
+            </li>
             {serviceItems.length > 0 && (
               <MobileNavGroup
                 menuId={MENU_SERVICES}
@@ -226,62 +244,19 @@ export function Navbar() {
               />
             )}
             <li>
-              <button
-                type="button"
-                onClick={() => setMobileExpanded(mobileExpanded === MENU_PORTALS_MOBILE ? null : MENU_PORTALS_MOBILE)}
-                className="flex w-full items-center justify-between rounded-lg py-3 text-lg font-medium text-slate-200"
+              <a
+                href="https://www.jobmela.co.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block rounded-lg py-3 text-lg font-semibold text-slate-800 hover:text-blue-600"
+                onClick={closeMobile}
               >
-                Portals
-                <ChevronDown
-                  size={20}
-                  className={cn("transition-transform", mobileExpanded === MENU_PORTALS_MOBILE && "rotate-180")}
-                />
-              </button>
-              {mobileExpanded === MENU_PORTALS_MOBILE && (
-                <div className="mt-2 grid gap-3 pb-4">
-                  {mobilePortalCards.map((p) => {
-                    const Icon = p.icon;
-                    return (
-                      <Link
-                        key={p.title}
-                        href={p.href}
-                        className="flex gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-4 transition active:bg-white/10"
-                        onClick={closeMobile}
-                      >
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-accent text-white">
-                          <Icon size={20} />
-                        </div>
-                        <div>
-                          <p className="font-semibold text-white">{p.title}</p>
-                          <p className="mt-0.5 text-xs text-slate-400">{p.desc}</p>
-                        </div>
-                      </Link>
-                    );
-                  })}
-                </div>
-              )}
+                Careers
+              </a>
             </li>
-            {trainingItems.length > 0 && (
-              <MobileNavGroup
-                menuId={MENU_TRAINING}
-                label="Training"
-                items={trainingItems}
-                mobileExpanded={mobileExpanded}
-                setMobileExpanded={setMobileExpanded}
-                onNavigate={closeMobile}
-              />
-            )}
             <li>
-              <Link href="/#contact" className="block rounded-lg py-3 text-lg font-medium text-slate-200" onClick={closeMobile}>
-                Contact
-              </Link>
-            </li>
-            <li className="flex flex-col gap-3 border-t border-white/10 pt-4">
-              <Link href="/jobs" className="btn-secondary w-full text-center" onClick={closeMobile}>
-                Find Jobs
-              </Link>
-              <Link href="/#contact" className="btn-primary w-full text-center" onClick={closeMobile}>
-                Hire Talent
+              <Link href="/contact" className="block rounded-lg py-3 text-lg font-semibold text-slate-800 hover:text-blue-600" onClick={closeMobile}>
+                Contact Us
               </Link>
             </li>
           </ul>

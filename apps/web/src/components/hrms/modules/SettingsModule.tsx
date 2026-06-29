@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { 
-  Building2, Sliders, ShieldCheck, Bell, Users2, Save, Check, RefreshCw 
+import {
+  Building2, Sliders, ShieldCheck, Bell, Users2, Save, Check, RefreshCw
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -106,32 +106,32 @@ export function SettingsModule() {
               <div className="grid gap-6 sm:grid-cols-2">
                 <div>
                   <label className="block text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">Company Name</label>
-                  <input type="text" value={companyForm.name} onChange={e => setCompanyForm({...companyForm, name: e.target.value})} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
+                  <input type="text" value={companyForm.name} onChange={e => setCompanyForm({ ...companyForm, name: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">Tagline</label>
-                  <input type="text" value={companyForm.tagline} onChange={e => setCompanyForm({...companyForm, tagline: e.target.value})} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
+                  <input type="text" value={companyForm.tagline} onChange={e => setCompanyForm({ ...companyForm, tagline: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
                 </div>
               </div>
 
               <div className="grid gap-6 sm:grid-cols-3">
                 <div>
                   <label className="block text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">Support Email</label>
-                  <input type="email" value={companyForm.email} onChange={e => setCompanyForm({...companyForm, email: e.target.value})} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
+                  <input type="email" value={companyForm.email} onChange={e => setCompanyForm({ ...companyForm, email: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">Phone Number</label>
-                  <input type="text" value={companyForm.phone} onChange={e => setCompanyForm({...companyForm, phone: e.target.value})} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
+                  <input type="text" value={companyForm.phone} onChange={e => setCompanyForm({ ...companyForm, phone: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">Website URL</label>
-                  <input type="text" value={companyForm.website} onChange={e => setCompanyForm({...companyForm, website: e.target.value})} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
+                  <input type="text" value={companyForm.website} onChange={e => setCompanyForm({ ...companyForm, website: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
                 </div>
               </div>
 
               <div>
                 <label className="block text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">Registered Address</label>
-                <textarea rows={3} value={companyForm.address} onChange={e => setCompanyForm({...companyForm, address: e.target.value})} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
+                <textarea rows={3} value={companyForm.address} onChange={e => setCompanyForm({ ...companyForm, address: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
               </div>
 
               <div className="flex justify-end">
@@ -147,33 +147,33 @@ export function SettingsModule() {
               <div className="grid gap-6 sm:grid-cols-3">
                 <div>
                   <label className="block text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">Standard Work Week</label>
-                  <select value={hrForm.workWeek} onChange={e => setHrForm({...hrForm, workWeek: e.target.value})} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white">
+                  <select value={hrForm.workWeek} onChange={e => setHrForm({ ...hrForm, workWeek: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white">
                     <option value="5 Days (Mon - Fri)">5 Days (Mon - Fri)</option>
                     <option value="6 Days (Mon - Sat)">6 Days (Mon - Sat)</option>
                   </select>
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">Office Timings</label>
-                  <input type="text" value={hrForm.officeTiming} onChange={e => setHrForm({...hrForm, officeTiming: e.target.value})} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
+                  <input type="text" value={hrForm.officeTiming} onChange={e => setHrForm({ ...hrForm, officeTiming: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">Late Grace Period</label>
-                  <input type="text" value={hrForm.gracePeriod} onChange={e => setHrForm({...hrForm, gracePeriod: e.target.value})} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
+                  <input type="text" value={hrForm.gracePeriod} onChange={e => setHrForm({ ...hrForm, gracePeriod: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
                 </div>
               </div>
 
               <div className="grid gap-6 sm:grid-cols-3 border-t border-slate-100 pt-6 dark:border-white/10">
                 <div>
                   <label className="block text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">Probation Period</label>
-                  <input type="text" value={hrForm.probationPeriod} onChange={e => setHrForm({...hrForm, probationPeriod: e.target.value})} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
+                  <input type="text" value={hrForm.probationPeriod} onChange={e => setHrForm({ ...hrForm, probationPeriod: e.target.value })} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">Annual Leaves Quota</label>
-                  <input type="number" value={hrForm.annualLeaves} onChange={e => setHrForm({...hrForm, annualLeaves: Number(e.target.value)})} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
+                  <input type="number" value={hrForm.annualLeaves} onChange={e => setHrForm({ ...hrForm, annualLeaves: Number(e.target.value) })} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold uppercase text-slate-500 dark:text-slate-400 mb-1">Maternity Leave (Days)</label>
-                  <input type="number" value={hrForm.maternityLeaves} onChange={e => setHrForm({...hrForm, maternityLeaves: Number(e.target.value)})} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
+                  <input type="number" value={hrForm.maternityLeaves} onChange={e => setHrForm({ ...hrForm, maternityLeaves: Number(e.target.value) })} className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm outline-none focus:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white" />
                 </div>
               </div>
 
@@ -187,7 +187,7 @@ export function SettingsModule() {
           {activeTab === "security" && (
             <div className="space-y-6">
               <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white border-b border-slate-100 pb-3 dark:border-white/10">Access Control & Authentication</h3>
-              
+
               <div className="space-y-4">
                 <div className="flex items-center justify-between rounded-xl border border-slate-100 bg-slate-50 p-4 dark:border-white/5 dark:bg-white/5">
                   <div>
@@ -222,7 +222,7 @@ export function SettingsModule() {
           {activeTab === "notifications" && (
             <form onSubmit={handleSave} className="space-y-6">
               <h3 className="font-display text-lg font-bold text-slate-900 dark:text-white border-b border-slate-100 pb-3 dark:border-white/10">System Alerts & Workflow Triggers</h3>
-              
+
               <div className="space-y-4">
                 {[
                   { id: "emailAlerts", label: "Email Notifications", desc: "Send summary emails for daily attendance and leave approvals.", field: "emailAlerts" },
@@ -238,7 +238,7 @@ export function SettingsModule() {
                     <input
                       type="checkbox"
                       checked={(notificationForm as any)[item.field]}
-                      onChange={e => setNotificationForm({...notificationForm, [item.field]: e.target.checked})}
+                      onChange={e => setNotificationForm({ ...notificationForm, [item.field]: e.target.checked })}
                       className="h-5 w-5 rounded border-slate-300 text-primary focus:ring-primary"
                     />
                   </div>

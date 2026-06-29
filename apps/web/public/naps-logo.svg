@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="napsGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A66C2" />
+      <stop offset="100%" stop-color="#004182" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF7A00" />
+      <stop offset="100%" stop-color="#FF9E43" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Card -->
+  <rect width="400" height="120" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+  
+  <!-- Left Icon Emblem -->
+  <g transform="translate(15, 15)">
+    <!-- Outer Ring -->
+    <circle cx="45" cy="45" r="40" fill="url(#napsGrad)" />
+    <circle cx="45" cy="45" r="35" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="5 3" />
+    
+    <!-- Gear Icon / Skill Wheel (Apprenticeship symbol) -->
+    <path d="M 45 23 L 45 28 M 45 62 L 45 67 M 23 45 L 28 45 M 62 45 L 67 45 M 29.5 29.5 L 33 33 M 57 57 L 60.5 60.5 M 29.5 60.5 L 33 57 M 57 29.5 L 60.5 33" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+    <circle cx="45" cy="45" r="16" fill="url(#accentGrad)" />
+    
+    <!-- Inner Graduate Cap -->
+    <path d="M 45 37 L 54 41 L 45 45 L 36 41 Z" fill="#FFFFFF" />
+    <path d="M 39 42.5 L 39 48 C 39 51, 51 51, 51 48 L 51 42.5" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round" />
+    <path d="M 52 41 L 52 49" fill="none" stroke="#FFFFFF" stroke-width="1" />
+    <circle cx="52" cy="49" r="1.5" fill="#FFFFFF" />
+  </g>
+  
+  <!-- Text Elements -->
+  <g transform="translate(115, 0)">
+    <text x="0" y="42" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="900" fill="#0A66C2" letter-spacing="1">NAPS</text>
+    <rect x="0" y="52" width="70" height="4" rx="2" fill="url(#accentGrad)" />
+    <text x="0" y="78" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#1E293B">National Apprenticeship</text>
+    <text x="0" y="96" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#64748B" letter-spacing="0.5">Promotion Scheme</text>
+  </g>
+  
+  <!-- Gov of India indicator badge -->
+  <g transform="translate(310, 15)">
+    <rect width="75" height="18" rx="9" fill="#F1F5F9" />
+    <text x="37.5" y="13" font-family="system-ui, -apple-system, sans-serif" font-size="8" font-weight="800" fill="#475569" text-anchor="middle" letter-spacing="0.5">GOVT. OF INDIA</text>
+  </g>
+</svg>

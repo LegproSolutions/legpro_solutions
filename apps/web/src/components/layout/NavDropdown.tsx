@@ -12,6 +12,7 @@ export type NavDropdownItem = {
   description?: string;
   external?: boolean;
   comingSoon?: boolean;
+  icon?: any;
 };
 
 type NavDropdownProps = {
@@ -21,6 +22,7 @@ type NavDropdownProps = {
   align?: "left" | "right";
   activeMenu: string | null;
   setActiveMenu: (id: string | null) => void;
+  isMega?: boolean;
 };
 
 export function NavDropdown({
@@ -30,6 +32,7 @@ export function NavDropdown({
   align = "left",
   activeMenu,
   setActiveMenu,
+  isMega = false,
 }: NavDropdownProps) {
   const open = activeMenu === menuId;
   const ref = useRef<HTMLLIElement>(null);
@@ -49,20 +52,24 @@ export function NavDropdown({
   };
 
   return (
-    <li ref={ref} className="relative z-[60]">
+    <li ref={ref} className="relative z-[60] h-full flex items-center">
       <button
         type="button"
         onClick={toggle}
         onMouseEnter={() => setActiveMenu(menuId)}
         className={cn(
-          "flex items-center gap-1 rounded-lg px-1 py-1.5 text-sm font-medium transition-colors",
-          open ? "text-white" : "text-slate-300 hover:text-white"
+          "relative group h-full flex items-center gap-1 px-2 xl:px-4 text-sm xl:text-[15px] font-semibold transition-colors duration-300",
+          open ? "text-blue-600" : "text-slate-600 hover:text-blue-600"
         )}
         aria-expanded={open}
         aria-haspopup="true"
       >
-        {label}
-        <ChevronDown size={16} className={cn("transition-transform duration-200", open && "rotate-180")} />
+        <span>{label}</span>
+        <ChevronDown size={14} className={cn("transition-transform duration-300 text-slate-400 group-hover:text-blue-600", open && "rotate-180")} />
+        <span className={cn(
+          "absolute bottom-0 left-1/2 h-[4px] -translate-x-1/2 rounded-t-full bg-blue-600 transition-all duration-300",
+          open ? "w-8" : "w-0 group-hover:w-8"
+        )} />
       </button>
 
       <AnimatePresence>
@@ -73,30 +80,41 @@ export function NavDropdown({
             exit={{ opacity: 0, y: 8 }}
             transition={{ duration: 0.18 }}
             className={cn(
-              "absolute top-full z-[70] mt-2 min-w-[280px] overflow-hidden rounded-2xl border border-white/10 bg-slate-950/95 shadow-2xl shadow-black/50 backdrop-blur-xl",
+              "absolute top-full z-[70] mt-1 overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-[0_10px_35px_rgba(0,0,0,0.08)] backdrop-blur-xl",
+              isMega ? "w-[680px] p-6 -left-12 lg:-left-24" : "min-w-[280px] py-2",
               align === "right" ? "right-0" : "left-0"
             )}
           >
-            <ul className="py-2">
+            <ul className={cn(isMega ? "grid grid-cols-2 gap-4" : "flex flex-col")}>
               {items.map((item) => {
+                const Icon = item.icon;
                 const content = (
-                  <>
-                    <span className="flex items-center gap-2 font-medium text-white">
-                      {item.label}
-                      {item.external && <ExternalLink size={14} className="text-slate-400" />}
-                      {item.comingSoon && (
-                        <span className="rounded bg-amber-500/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-amber-400">
-                          Soon
+                  <div className="flex items-start gap-3 text-left">
+                    {isMega && Icon && (
+                      <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600 border border-blue-100 group-hover/item:bg-blue-600 group-hover/item:text-white group-hover/item:border-blue-600 transition-colors duration-300">
+                        <Icon size={16} />
+                      </div>
+                    )}
+                    <div>
+                      <span className="flex items-center gap-1.5 font-bold text-slate-800 transition-colors group-hover/item:text-blue-600 text-sm">
+                        {item.label}
+                        {item.external && <ExternalLink size={13} className="text-slate-400" />}
+                        {item.comingSoon && (
+                          <span className="rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-semibold uppercase text-amber-700">
+                            Soon
+                          </span>
+                        )}
+                      </span>
+                      {item.description && (
+                        <span className="mt-1 block text-xs leading-normal text-slate-500 line-clamp-2">
+                          {item.description}
                         </span>
                       )}
-                    </span>
-                    {item.description && (
-                      <span className="mt-0.5 block text-xs leading-snug text-slate-400">{item.description}</span>
-                    )}
-                  </>
+                    </div>
+                  </div>
                 );
                 const className =
-                  "block px-4 py-3 text-left transition-colors hover:bg-white/[0.06] active:bg-white/[0.08]";
+                  "group/item block px-4 py-3 rounded-xl transition-colors hover:bg-slate-50 active:bg-slate-100";
 
                 if (item.external) {
                   return (
@@ -129,7 +147,7 @@ export function NavDropdown({
     </li>
   );
 }
-
+ 
 type MobileNavGroupProps = {
   menuId: string;
   label: string;
@@ -138,7 +156,7 @@ type MobileNavGroupProps = {
   setMobileExpanded: (id: string | null) => void;
   onNavigate: () => void;
 };
-
+ 
 export function MobileNavGroup({
   menuId,
   label,
@@ -153,13 +171,13 @@ export function MobileNavGroup({
       <button
         type="button"
         onClick={() => setMobileExpanded(expanded ? null : menuId)}
-        className="flex w-full items-center justify-between rounded-lg py-2 text-lg font-medium text-slate-200"
+        className="flex w-full items-center justify-between rounded-lg py-2 text-lg font-semibold text-slate-800 hover:text-blue-600"
       >
         {label}
         <ChevronDown size={20} className={cn("transition-transform", expanded && "rotate-180")} />
       </button>
       {expanded && (
-        <ul className="mt-2 space-y-1 border-l border-white/10 pl-4">
+        <ul className="mt-2 space-y-1 border-l border-slate-100 pl-4">
           {items.map((item) =>
             item.external ? (
               <li key={item.label}>
@@ -167,7 +185,7 @@ export function MobileNavGroup({
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block py-2 text-sm text-slate-400 hover:text-white"
+                  className="block py-2 text-sm text-slate-500 hover:text-blue-600"
                   onClick={onNavigate}
                 >
                   {item.label}
@@ -177,11 +195,11 @@ export function MobileNavGroup({
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="block py-2 text-sm text-slate-400 hover:text-white"
+                  className="block py-2 text-sm text-slate-500 hover:text-blue-600"
                   onClick={onNavigate}
                 >
                   {item.label}
-                  {item.comingSoon && <span className="ml-2 text-xs text-amber-400">(Soon)</span>}
+                  {item.comingSoon && <span className="ml-2 text-xs text-amber-600">(Soon)</span>}
                 </Link>
               </li>
             )

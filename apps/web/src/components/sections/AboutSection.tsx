@@ -6,7 +6,7 @@ import { StatsCounter } from "@/components/ui/StatsCounter";
 
 export function AboutSection() {
   return (
-    <Section id="about">
+    <Section id="about" className="!py-10 md:!py-12">
       <Container>
         <SectionHeader
           eyebrow="About Us"

@@ -9,7 +9,7 @@ const icons = { Languages, Award, Wrench };
 
 export function TrainingSection() {
   return (
-    <Section id="training">
+    <Section id="training" className="!py-10 md:!py-12">
       <Container>
         <SectionHeader
           eyebrow="Training Programs"
