@@ -129,7 +129,7 @@ export function ContactSection() {
                     <p className="text-sm font-semibold text-slate-600">
                       Mail Us At :{" "}
                       <a href="mailto:Prashant@legpro.co.in" className="hover:text-[#0A66C2] font-bold text-slate-800 transition-colors">
-                        Prashant@legpro.co.in
+                        Himanshu@legpro.co.in
                       </a>
                     </p>
                   </div>
