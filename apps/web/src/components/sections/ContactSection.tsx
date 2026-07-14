@@ -128,8 +128,8 @@ export function ContactSection() {
                     <Mail className="h-5 w-5 text-[#0A66C2] shrink-0" />
                     <p className="text-sm font-semibold text-slate-600">
                       Mail Us At :{" "}
-                      <a href="mailto:Prashant@legpro.co.in" className="hover:text-[#0A66C2] font-bold text-slate-800 transition-colors">
-                        Prashant@legpro.co.in
+                      <a href="mailto:Himanshu@legpro.co.in" className="hover:text-[#0A66C2] font-bold text-slate-800 transition-colors">
+                        Himanshu@legpro.co.in
                       </a>
                     </p>
                   </div>
