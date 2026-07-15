@@ -27,27 +27,31 @@ router.post("/", async (req, res) => {
 
     // Trigger email notification in background (does not block db success response)
     if (lead) {
-      sendContactNotification(lead).catch((emailErr) => {
-        console.error("[Contact Router] Failed to send email notification asynchronously:", emailErr);
-      });
-    } else {
-      // In-memory fallback notification
-      sendContactNotification({
-        firstName: data.firstName,
-        lastName: data.lastName,
-        email: data.email,
-        message: data.message,
-        createdAt: new Date().toISOString()
-      }).catch((emailErr) => {
-        console.error("[Contact Router] Failed to send fallback email notification:", emailErr);
-      });
-    }
-
-    return res.status(201).json({
-      success: true,
-      message: "Thank you for contacting us. We will get back to you soon.",
-      id: lead ? lead._id : undefined,
+  try {
+    await sendContactNotification(lead);
+  } catch (emailErr) {
+    console.error("[Contact Router] Failed to send email notification:", emailErr);
+    // don't fail the whole request just because email failed — still return success for the form submission
+  }
+} else {
+  try {
+    await sendContactNotification({
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      message: data.message,
+      createdAt: new Date().toISOString(),
     });
+  } catch (emailErr) {
+    console.error("[Contact Router] Failed to send fallback email notification:", emailErr);
+  }
+}
+
+return res.status(201).json({
+  success: true,
+  message: "Thank you for contacting us. We will get back to you soon.",
+  id: lead ? lead._id : undefined,
+});
   } catch (err) {
     if (err instanceof z.ZodError) {
       return res.status(400).json({ success: false, error: err.errors[0].message });
