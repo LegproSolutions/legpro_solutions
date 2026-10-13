@@ -65,7 +65,7 @@ export function JobsPreviewSection() {
         </div>
         
         <div className="mt-16 text-center">
-          <Link href="/jobs" className="btn-secondary inline-flex items-center gap-2">
+          <Link href="/careers" className="btn-secondary inline-flex items-center gap-2">
             <span>Explore All Vacancies</span>
             <ArrowRight size={16} />
           </Link>

@@ -90,7 +90,7 @@ export function HeroSection() {
       <div className="grid w-full grid-cols-1 lg:grid-cols-12 items-stretch">
 
         {/* Left Side (60%) - Solid Brand Background with Geometric Accents */}
-        <div className="lg:col-span-7 bg-gradient-to-br from-[#04142B] via-[#0A1F44] to-[#1E40FF] flex flex-col justify-center px-6 py-16 md:px-16 md:py-24 relative overflow-hidden text-white min-h-[50vh] lg:min-h-0">
+        <div className="lg:col-span-7 bg-gradient-to-br from-[#04142B] via-[#0A1F44] to-[#1E40FF] flex flex-col justify-center px-5 py-10 sm:px-8 sm:py-14 md:px-12 lg:px-10 xl:px-16 md:py-20 lg:py-16 xl:py-24 pb-24 sm:pb-24 relative overflow-hidden text-white min-h-[45vh] lg:min-h-0">
 
           {/* Subtle Geometric Background Shapes */}
           <div className="absolute inset-0 pointer-events-none opacity-10">
@@ -99,7 +99,7 @@ export function HeroSection() {
             <div className="absolute top-1/3 right-10 w-0 h-0 border-l-[30px] border-l-transparent border-r-[30px] border-r-transparent border-b-[50px] border-b-white" />
           </div>
 
-          <div className="relative z-10 max-w-2xl space-y-6">
+          <div className="relative z-10 max-w-2xl space-y-4 sm:space-y-6">
             <AnimatePresence mode="wait">
               <motion.div
                 key={current}
@@ -107,11 +107,11 @@ export function HeroSection() {
                 initial="initial"
                 animate="animate"
                 exit="exit"
-                className="space-y-6"
+                className="space-y-4 sm:space-y-6"
               >
                 <motion.h1
                   variants={headingVariants}
-                  className="font-display text-4xl font-extrabold tracking-tight leading-tight sm:text-5xl lg:text-6xl text-white Poppins"
+                  className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-extrabold tracking-tight leading-tight text-white Poppins break-words"
                 >
                   <TypewriterText text={slides[current].title} cursorColor="#2dd4bf" />
                 </motion.h1>
@@ -126,23 +126,23 @@ export function HeroSection() {
 
                 <motion.p
                   variants={descVariants}
-                  className="text-base sm:text-lg leading-relaxed text-slate-200"
+                  className="text-sm sm:text-base md:text-lg leading-relaxed text-slate-200"
                 >
                   {slides[current].description}
                 </motion.p>
               </motion.div>
             </AnimatePresence>
 
-            <div className="flex flex-wrap gap-4 pt-6">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-4 sm:pt-6">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-xl bg-teal-500 hover:bg-teal-600 px-8 py-3.5 text-sm font-bold text-white shadow-lg shadow-teal-500/20 hover:scale-[1.03] transition-all duration-300"
+                className="inline-flex items-center justify-center rounded-xl bg-teal-500 hover:bg-teal-600 px-7 py-3 sm:px-8 sm:py-3.5 text-sm font-bold text-white shadow-lg shadow-teal-500/20 hover:scale-[1.03] transition-all duration-300 w-full sm:w-auto"
               >
                 Get Started
               </Link>
               <Link
                 href="/#services"
-                className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 px-8 py-3.5 text-sm font-semibold text-white transition-colors duration-300"
+                className="inline-flex items-center justify-center rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 px-7 py-3 sm:px-8 sm:py-3.5 text-sm font-semibold text-white transition-colors duration-300 w-full sm:w-auto"
               >
                 Explore Services
               </Link>
@@ -190,7 +190,7 @@ export function HeroSection() {
         </div>
 
         {/* Right Side (40%) - Image Section with Curved Arched Border Shape */}
-        <div className="lg:col-span-5 relative bg-white overflow-hidden min-h-[40vh] lg:min-h-0">
+        <div className="lg:col-span-5 relative bg-white overflow-hidden min-h-[260px] sm:min-h-[340px] lg:min-h-0">
 
           {/* Curved Arched SVG Mask */}
           <div className="absolute inset-y-0 left-0 w-20 bg-transparent z-20 pointer-events-none hidden lg:block">

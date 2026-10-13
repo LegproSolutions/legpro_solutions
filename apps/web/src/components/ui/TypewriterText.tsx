@@ -41,13 +41,13 @@ export function TypewriterText({
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className={`inline-block ${className}`}
+      className={`inline max-w-full break-words ${className}`}
     >
       {characters.map((char, index) => (
         <motion.span
           key={index}
           variants={characterVariants}
-          style={{ whiteSpace: char === " " ? "pre" : "normal" }}
+          style={{ whiteSpace: char === " " ? "pre-wrap" : "normal" }}
         >
           {char}
         </motion.span>

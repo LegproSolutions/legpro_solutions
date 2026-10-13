@@ -155,6 +155,8 @@ type MobileNavGroupProps = {
   mobileExpanded: string | null;
   setMobileExpanded: (id: string | null) => void;
   onNavigate: () => void;
+  overviewHref?: string;
+  overviewLabel?: string;
 };
  
 export function MobileNavGroup({
@@ -164,6 +166,8 @@ export function MobileNavGroup({
   mobileExpanded,
   setMobileExpanded,
   onNavigate,
+  overviewHref,
+  overviewLabel,
 }: MobileNavGroupProps) {
   const expanded = mobileExpanded === menuId;
   return (
@@ -171,13 +175,25 @@ export function MobileNavGroup({
       <button
         type="button"
         onClick={() => setMobileExpanded(expanded ? null : menuId)}
-        className="flex w-full items-center justify-between rounded-lg py-2 text-lg font-semibold text-slate-800 hover:text-blue-600"
+        className="flex w-full items-center justify-between rounded-lg py-2.5 text-lg font-semibold text-slate-800 hover:text-blue-600"
       >
-        {label}
-        <ChevronDown size={20} className={cn("transition-transform", expanded && "rotate-180")} />
+        <span>{label}</span>
+        <ChevronDown size={20} className={cn("transition-transform duration-200 text-slate-500", expanded && "rotate-180 text-blue-600")} />
       </button>
       {expanded && (
-        <ul className="mt-2 space-y-1 border-l border-slate-100 pl-4">
+        <ul className="mt-1 space-y-1 border-l-2 border-blue-500/20 pl-4 py-1">
+          {overviewHref && (
+            <li className="mb-2">
+              <Link
+                href={overviewHref}
+                className="flex items-center justify-between rounded-xl bg-blue-50/80 px-3 py-2 text-sm font-bold text-blue-600 hover:bg-blue-100 transition-colors"
+                onClick={onNavigate}
+              >
+                <span>{overviewLabel || "View All Services"}</span>
+                <span className="text-xs font-black">→</span>
+              </Link>
+            </li>
+          )}
           {items.map((item) =>
             item.external ? (
               <li key={item.label}>
@@ -185,7 +201,7 @@ export function MobileNavGroup({
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block py-2 text-sm text-slate-500 hover:text-blue-600"
+                  className="block py-2 text-sm text-slate-600 hover:text-blue-600 font-medium"
                   onClick={onNavigate}
                 >
                   {item.label}
@@ -195,7 +211,7 @@ export function MobileNavGroup({
               <li key={item.label}>
                 <Link
                   href={item.href}
-                  className="block py-2 text-sm text-slate-500 hover:text-blue-600"
+                  className="block py-2 text-sm text-slate-600 hover:text-blue-600 font-medium"
                   onClick={onNavigate}
                 >
                   {item.label}

@@ -185,9 +185,9 @@
     "portals": [
       {
         "label": "Job Mela",
-        "href": "https://jobmela.co.in",
-        "description": "Browse openings, apply for jobs & manage your profile",
-        "external": true
+        "href": "/careers",
+        "description": "Register candidate details & access verified job drives",
+        "external": false
       },
       {
         "label": "Corporate Website",

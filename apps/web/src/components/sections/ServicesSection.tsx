@@ -43,36 +43,42 @@ const servicesList: Service[] = [
     image: "/service-nats.png",
     href: "/learning-staffing",
   },
+  {
+    id: "international-recruitment",
+    title: "International Recruitment",
+    image: "/service-international.png",
+    href: "/international-recruitment",
+  },
 ];
 
 export function ServicesSection() {
   return (
-    <Section id="services" className="!py-16 bg-white border-y border-slate-100">
+    <Section id="services" className="!py-12 sm:!py-16 bg-white border-y border-slate-100">
       <Container>
-        <div className="mb-12 text-center max-w-3xl mx-auto">
-          <h2 className="font-display text-4xl md:text-5xl font-black text-black uppercase tracking-wide">
+        <div className="mb-8 sm:mb-12 text-center max-w-3xl mx-auto px-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-black uppercase tracking-wide">
             Our Services
           </h2>
-          <div className="mt-6 h-1 w-16 rounded-full bg-gradient-to-r from-primary to-accent mx-auto" />
+          <div className="mt-4 sm:mt-6 h-1 w-16 rounded-full bg-gradient-to-r from-primary to-accent mx-auto" />
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 mt-12 justify-center">
+        <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8 sm:mt-12 justify-center">
           {servicesList.map((service, index) => {
             return (
               <motion.article
                 key={service.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="group relative flex flex-col items-center justify-center h-[360px] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 cursor-pointer border border-slate-100"
+                viewport={{ once: true, amount: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.04 }}
+                className="group relative flex flex-col items-center justify-center h-[320px] sm:h-[360px] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 cursor-pointer border border-slate-100"
               >
                 {/* Image Background */}
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 20vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
@@ -88,7 +94,7 @@ export function ServicesSection() {
                   {/* Know More Button */}
                   <Link
                     href={service.href}
-                    className="inline-flex items-center justify-center rounded-xl bg-blue-500 hover:bg-blue-600 px-6 py-2.5 text-xs font-bold text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:scale-105 active:scale-95"
+                    className="inline-flex items-center justify-center rounded-xl bg-blue-500 hover:bg-blue-600 px-7 py-3 text-xs sm:text-sm font-bold text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:scale-105 active:scale-95"
                   >
                     <span>Know More</span>
                   </Link>

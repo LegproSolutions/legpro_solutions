@@ -51,10 +51,10 @@ export function TestimonialsSection() {
           {testimonials.map((test, index) => (
             <motion.div
               key={test.author}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true, amount: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
               className="glass-card glass-card-hover p-8 border-white/5 relative flex flex-col justify-between"
             >
               <div>

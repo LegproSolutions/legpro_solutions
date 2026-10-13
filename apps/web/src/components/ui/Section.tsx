@@ -15,16 +15,16 @@ export function Section({ id, className, children, light }: SectionProps) {
     <section
       id={id}
       className={cn(
-        "section-padding relative overflow-hidden",
+        "section-padding relative overflow-hidden scroll-mt-20 md:scroll-mt-24",
         light ? "bg-slate-50 text-slate-900" : "bg-surface-dark text-slate-100",
         className
       )}
     >
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.5 }}
+        viewport={{ once: true, amount: 0 }}
+        transition={{ duration: 0.4 }}
         className="relative z-10"
       >
         {children}

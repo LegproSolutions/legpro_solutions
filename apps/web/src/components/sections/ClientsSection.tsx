@@ -7,10 +7,8 @@ const partnerStyles: Record<string, { bg: string; border: string; text: string }
   SMR: { bg: "rgba(29, 78, 216, 0.1)", border: "rgba(29, 78, 216, 0.3)", text: "#1D4ED8" }, // light blue tint, dark blue text
   Overdrive: { bg: "rgba(255, 165, 0, 0.1)", border: "rgba(255, 165, 0, 0.3)", text: "#FF6600" }, // orange brand
   OEL: { bg: "rgba(16, 185, 129, 0.1)", border: "rgba(16, 185, 129, 0.3)", text: "#10B981" }, // teal/green
-  UEL: { bg: "rgba(16, 185, 129, 0.1)", border: "rgba(16, 185, 129, 0.3)", text: "#10B981" }, // teal/green
   Veira: { bg: "rgba(124, 58, 237, 0.1)", border: "rgba(124, 58, 237, 0.3)", text: "#7C3AED" }, // purple
   "New Holland": { bg: "rgba(245, 158, 11, 0.1)", border: "rgba(245, 158, 11, 0.3)", text: "#F59E0B" }, // amber
-  Lava: { bg: "rgba(220, 38, 38, 0.1)", border: "rgba(220, 38, 38, 0.3)", text: "#DC2626" }, // red
   LAVA: { bg: "rgba(220, 38, 38, 0.1)", border: "rgba(220, 38, 38, 0.3)", text: "#DC2626" }, // red
   ITC: { bg: "rgba(13, 148, 136, 0.1)", border: "rgba(13, 148, 136, 0.3)", text: "#0D9488" }, // teal
   UFLEX: { bg: "rgba(220, 38, 38, 0.1)", border: "rgba(220, 38, 38, 0.3)", text: "#E53E3E" },
@@ -22,10 +20,6 @@ const partnerStyles: Record<string, { bg: string; border: string; text: string }
   "Kanodia Group": { bg: "rgba(14, 165, 233, 0.1)", border: "rgba(14, 165, 233, 0.3)", text: "#0EA5E9" },
   "ICICI Foundation": { bg: "rgba(249, 115, 22, 0.1)", border: "rgba(249, 115, 22, 0.3)", text: "#F97316" },
   Tecno: { bg: "rgba(37, 99, 235, 0.1)", border: "rgba(37, 99, 235, 0.3)", text: "#2563EB" },
-  Incise: { bg: "rgba(132, 204, 22, 0.1)", border: "rgba(132, 204, 22, 0.3)", text: "#84CC16" },
-  "Jupiter Laminators": { bg: "rgba(136, 19, 55, 0.1)", border: "rgba(136, 19, 55, 0.3)", text: "#881337" },
-  Inkofix: { bg: "rgba(236, 72, 153, 0.1)", border: "rgba(236, 72, 153, 0.3)", text: "#EC4899" },
-  "JPan Tubular": { bg: "rgba(30, 64, 175, 0.1)", border: "rgba(30, 64, 175, 0.3)", text: "#1E40AF" },
 };
 
 const partnerLogos: Record<string, string> = {
@@ -41,16 +35,11 @@ const partnerLogos: Record<string, string> = {
   "SG": "/logos/sg.jpg",
   "ILJIN": "/logos/iljin.jpg",
   "SMR": "/logos/smr.jpg",
-  Lava: "/logos/lava.jpg",
   LAVA: "/logos/lava.jpg",
   "CNH Industrial": "/logos/cnh-industrial.png",
   "Kanodia Group": "/logos/kanodia-group.jpg",
   "ICICI Foundation": "/logos/icici-foundation.png",
   Tecno: "/logos/tecno.jpg",
-  Incise: "/logos/incise.jpg",
-  "Jupiter Laminators": "/logos/jupiter-laminators.png",
-  Inkofix: "/logos/inkofix.png",
-  "JPan Tubular": "/logos/jpan-tubular.png",
 };
 
 export function ClientsSection() {

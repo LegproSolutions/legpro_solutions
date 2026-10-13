@@ -29,6 +29,7 @@ export const HRMS_NAV: HrmsNavItem[] = [
   { slug: "leave", label: "Leave Management", icon: CalendarDays, href: "/hrms/leave" },
   { slug: "payroll", label: "Payroll", icon: IndianRupee, href: "/hrms/payroll" },
   { slug: "recruitment", label: "Recruitment", icon: UserPlus, href: "/hrms/recruitment" },
+  { slug: "candidate-pool", label: "Candidate Pool", icon: Users, href: "/hrms/candidate-pool" },
   { slug: "performance", label: "Performance", icon: TrendingUp, href: "/hrms/performance" },
   { slug: "tasks", label: "Tasks", icon: ListTodo, href: "/hrms/tasks" },
   { slug: "announcements", label: "Announcements", icon: Megaphone, href: "/hrms/announcements" },

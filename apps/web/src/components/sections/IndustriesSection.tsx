@@ -64,26 +64,26 @@ const industries: Industry[] = [
 
 export function IndustriesSection() {
   return (
-    <Section id="industries" className="!py-10 md:!py-12 bg-white border-y border-slate-100">
+    <Section id="industries" className="!py-10 md:!py-14 bg-white border-y border-slate-100">
       <Container>
-        <div className="mb-12 text-center max-w-3xl mx-auto">
-          <h2 className="font-display text-4xl md:text-5xl font-black text-black uppercase tracking-wide">
+        <div className="mb-8 sm:mb-12 text-center max-w-3xl mx-auto px-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-black uppercase tracking-wide">
             Industries We Serve
           </h2>
-          <div className="mt-6 h-1 w-16 rounded-full bg-gradient-to-r from-primary to-accent mx-auto" />
+          <div className="mt-4 sm:mt-6 h-1 w-16 rounded-full bg-gradient-to-r from-primary to-accent mx-auto" />
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mt-8">
+        <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-6 sm:mt-8">
           {industries.map((ind, index) => {
             const Icon = ind.icon;
             return (
               <motion.div
                 key={ind.name}
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.98 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="glass-card glass-card-hover p-6 border-slate-200/60 relative overflow-hidden group flex flex-col items-start"
+                viewport={{ once: true, amount: 0 }}
+                transition={{ duration: 0.35, delay: index * 0.04 }}
+                className="glass-card glass-card-hover p-5 sm:p-6 border-slate-200/60 relative overflow-hidden group flex flex-col items-start"
               >
                 <div className={`flex h-12 w-12 items-center justify-center rounded-xl border ${ind.color}`}>
                   <Icon size={22} />

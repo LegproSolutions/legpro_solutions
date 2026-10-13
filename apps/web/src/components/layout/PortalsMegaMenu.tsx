@@ -17,8 +17,8 @@ const portals = [
   {
     title: "Job Mela Portal",
     description:
-      "Browse jobs, apply instantly, track applications, and manage profiles.",
-    href: "/jobs",
+      "Register details, browse openings, and access the verified JobMela portal.",
+    href: "/careers",
     icon: Briefcase,
   },
   {

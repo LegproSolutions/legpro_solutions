@@ -16,7 +16,7 @@ export function StatsCounter({
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-50px" });
+  const inView = useInView(ref, { once: true });
   
   // Parse numeric value and dynamic suffix
   let numericValue = 0;

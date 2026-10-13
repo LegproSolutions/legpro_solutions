@@ -52,7 +52,7 @@ export function Footer() {
               <li><Link href="/" className="hover:text-accent transition">Home</Link></li>
               <li><Link href="/about" className="hover:text-accent transition">About Us</Link></li>
               <li><Link href="/#services" className="hover:text-accent transition">Services</Link></li>
-              <li><a href="https://www.jobmela.co.in/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition">Careers</a></li>
+              <li><Link href="/careers" className="hover:text-accent transition">Careers</Link></li>
               <li><Link href="/contact" className="hover:text-accent transition">Contact Us</Link></li>
             </ul>
           </div>
@@ -68,6 +68,7 @@ export function Footer() {
               <li><Link href="/naps-nats" className="hover:text-accent transition">NAPS/NATS</Link></li>
               <li><Link href="/bvoc-dvoc" className="hover:text-accent transition">BVoc./ DVoc.</Link></li>
               <li><Link href="/learning-staffing" className="hover:text-accent transition">Learning Skills</Link></li>
+              <li><Link href="/international-recruitment" className="hover:text-accent transition">International Recruitment</Link></li>
             </ul>
           </div>
 

@@ -6,7 +6,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
   return (
     <>
       <Navbar />
-      <main className="min-h-screen overflow-x-hidden pt-[84px]">{children}</main>
+      <main className="min-h-screen overflow-x-clip pt-[68px] sm:pt-[84px]">{children}</main>
       <Footer />
       <WhatsAppFloat />
     </>

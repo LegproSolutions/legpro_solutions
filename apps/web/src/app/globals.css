@@ -5,11 +5,13 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    @apply overflow-x-hidden;
+    overflow-x: clip;
   }
 
   body {
-    @apply min-h-screen antialiased bg-white text-slate-800 overflow-x-hidden w-full;
+    @apply min-h-screen antialiased bg-white text-slate-800 w-full;
+    overflow-x: clip;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -27,7 +29,7 @@
   }
 
   .section-padding {
-    @apply py-20 md:py-28;
+    @apply py-12 sm:py-16 md:py-24;
   }
 
   .btn-primary {

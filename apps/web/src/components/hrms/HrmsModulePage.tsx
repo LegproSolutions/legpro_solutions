@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { Plus, Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { HRMS_NAV } from "./hrms-nav";
 import { cn } from "@/lib/utils";
+import { CandidatePoolModule } from "./modules/CandidatePoolModule";
 
 const demoRows = [
   { id: "EMP-2401", name: "Aditi Sharma", dept: "HR", role: "Executive", status: "Active" },
@@ -18,6 +19,10 @@ type HrmsModulePageProps = {
 };
 
 export function HrmsModulePage({ moduleSlug }: HrmsModulePageProps) {
+  if (moduleSlug === "candidate-pool" || moduleSlug === "recruitment") {
+    return <CandidatePoolModule />;
+  }
+
   const meta = useMemo(() => HRMS_NAV.find((n) => n.slug === moduleSlug), [moduleSlug]);
   const title = meta?.label ?? moduleSlug;
   const [page, setPage] = useState(1);

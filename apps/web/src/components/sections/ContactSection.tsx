@@ -73,6 +73,7 @@ export function ContactSection() {
     "NAPS/NATS Solutions",
     "BVoc./ DVoc.",
     "Learning Skills",
+    "International Recruitment",
   ];
 
   return (

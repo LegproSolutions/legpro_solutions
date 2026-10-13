@@ -78,6 +78,7 @@ export function Navbar() {
     { label: "NAPS/NATS", href: "/naps-nats" },
     { label: "BVoc./ DVoc.", href: "/bvoc-dvoc" },
     { label: "Learning Skills", href: "/learning-staffing" },
+    { label: "International Recruitment", href: "/international-recruitment" },
   ];
 
   const aboutItems: NavDropdownItem[] = site.navigation?.about ?? [];
@@ -97,7 +98,7 @@ export function Navbar() {
     {
       title: "Job Mela Portal",
       desc: "Browse jobs, apply instantly, track applications, and manage profiles.",
-      href: "/jobs",
+      href: "/careers",
       icon: Briefcase,
     },
     {
@@ -176,16 +177,14 @@ export function Navbar() {
           )}
 
           <li className="h-full flex items-center">
-            <a
-              href="https://www.jobmela.co.in/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/careers"
               className="relative group h-full flex items-center px-2 xl:px-4 text-sm xl:text-[15px] font-semibold text-slate-600 hover:text-blue-600 transition-colors duration-300"
               onMouseEnter={() => setActiveMenuExclusive(null)}
             >
               <span>Careers</span>
               <span className="absolute bottom-0 left-1/2 h-[4px] w-0 -translate-x-1/2 rounded-t-full bg-blue-600 transition-all duration-300 group-hover:w-8" />
-            </a>
+            </Link>
           </li>
 
           <li className="h-full flex items-center">
@@ -236,7 +235,9 @@ export function Navbar() {
             {serviceItems.length > 0 && (
               <MobileNavGroup
                 menuId={MENU_SERVICES}
-                label="Services"
+                label="Our Services"
+                overviewHref="/#services"
+                overviewLabel="✦ View All Services (Overview)"
                 items={serviceItems}
                 mobileExpanded={mobileExpanded}
                 setMobileExpanded={setMobileExpanded}
@@ -244,15 +245,13 @@ export function Navbar() {
               />
             )}
             <li>
-              <a
-                href="https://www.jobmela.co.in/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/careers"
                 className="block rounded-lg py-3 text-lg font-semibold text-slate-800 hover:text-blue-600"
                 onClick={closeMobile}
               >
                 Careers
-              </a>
+              </Link>
             </li>
             <li>
               <Link href="/contact" className="block rounded-lg py-3 text-lg font-semibold text-slate-800 hover:text-blue-600" onClick={closeMobile}>
@@ -260,6 +259,23 @@ export function Navbar() {
               </Link>
             </li>
           </ul>
+
+          {/* Quick Mobile Action Buttons */}
+          <div className="mt-6 pt-6 border-t border-slate-100 flex flex-col gap-3">
+            <Link
+              href="/contact"
+              onClick={closeMobile}
+              className="w-full text-center rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 text-sm shadow-md transition-colors"
+            >
+              Request Callback
+            </Link>
+            <a
+              href="tel:7303086551"
+              className="w-full text-center rounded-xl border border-slate-200 bg-slate-50 text-slate-700 font-semibold py-2.5 text-xs hover:bg-slate-100 transition-colors"
+            >
+              Call Us: +91 73030 86551
+            </a>
+          </div>
         </div>
       )}
     </header>
