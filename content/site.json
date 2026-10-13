@@ -7,11 +7,7 @@
     "description": "LEGpro specializes in crafting secure and flexible recruiting solutions for various industries. With over five years of experience, we streamline the hiring process to connect businesses with the right candidates efficiently.",
     "phone": "7303086551",
     "phoneDisplay": "+91 73030 86551",
-<<<<<<< HEAD
-    "email": "Himanshu@legpro.co.in",
-=======
     "email": "Connect@legpro.co.in",
->>>>>>> 6c7320accb0fbcae10b16084f70e8667096a2a6a
     "website": "https://legpro.co.in",
     "brandLine": "LEGPRO Staffing | Learning",
     "jobMelaPortal": "https://jobmela.co.in",
@@ -48,16 +44,44 @@
       "text": "Founded over five years ago, LEGpro emerged as a leader in recruitment solutions, pioneering methods that prioritize client needs and security. From humble beginnings, we have expanded our reach and expertise, solidifying our position as a trusted partner for businesses in diverse industries."
     },
     "timeline": [
-      { "year": "Year 1", "label": "Founded with a vision to transform staffing" },
-      { "year": "Growth", "label": "Expanded across diverse industries" },
-      { "year": "Innovation", "label": "Pioneered secure, tailored hiring methods" },
-      { "year": "Today", "label": "Trusted partner for workforce excellence" }
+      {
+        "year": "Year 1",
+        "label": "Founded with a vision to transform staffing"
+      },
+      {
+        "year": "Growth",
+        "label": "Expanded across diverse industries"
+      },
+      {
+        "year": "Innovation",
+        "label": "Pioneered secure, tailored hiring methods"
+      },
+      {
+        "year": "Today",
+        "label": "Trusted partner for workforce excellence"
+      }
     ],
     "stats": [
-      { "value": 5, "suffix": "+", "label": "Years of Experience" },
-      { "value": 100, "suffix": "+", "label": "Successful Placements" },
-      { "value": 50, "suffix": "+", "label": "Partner Companies" },
-      { "value": 10, "suffix": "+", "label": "Industry Sectors" }
+      {
+        "value": 5,
+        "suffix": "+",
+        "label": "Years of Experience"
+      },
+      {
+        "value": 100,
+        "suffix": "+",
+        "label": "Successful Placements"
+      },
+      {
+        "value": 50,
+        "suffix": "+",
+        "label": "Partner Companies"
+      },
+      {
+        "value": 10,
+        "suffix": "+",
+        "label": "Industry Sectors"
+      }
     ]
   },
   "services": [
@@ -142,10 +166,26 @@
       "Trusted by leading industry partners"
     ],
     "stats": [
-      { "value": 95, "suffix": "%", "label": "Client Satisfaction" },
-      { "value": 48, "suffix": "hr", "label": "Avg. Response Time" },
-      { "value": 100, "suffix": "+", "label": "Roles Filled" },
-      { "value": 5, "suffix": "+", "label": "Years Trusted" }
+      {
+        "value": 95,
+        "suffix": "%",
+        "label": "Client Satisfaction"
+      },
+      {
+        "value": 48,
+        "suffix": "hr",
+        "label": "Avg. Response Time"
+      },
+      {
+        "value": 100,
+        "suffix": "+",
+        "label": "Roles Filled"
+      },
+      {
+        "value": 5,
+        "suffix": "+",
+        "label": "Years Trusted"
+      }
     ]
   },
   "partners": [
@@ -180,11 +220,27 @@
   },
   "navigation": {
     "about": [
-      { "label": "Company Overview", "href": "/about/company-overview", "description": "Who we are, our expertise & mission" },
-      { "label": "Mission & Values", "href": "/#about" },
-      { "label": "Our Journey", "href": "/#about" },
-      { "label": "Why Choose Us", "href": "/#why-us" },
-      { "label": "Partners", "href": "/#clients" }
+      {
+        "label": "Company Overview",
+        "href": "/about/company-overview",
+        "description": "Who we are, our expertise & mission"
+      },
+      {
+        "label": "Mission & Values",
+        "href": "/#about"
+      },
+      {
+        "label": "Our Journey",
+        "href": "/#about"
+      },
+      {
+        "label": "Why Choose Us",
+        "href": "/#why-us"
+      },
+      {
+        "label": "Partners",
+        "href": "/#clients"
+      }
     ],
     "portals": [
       {
