@@ -32,15 +32,14 @@ import { Container } from "@/components/ui/Section";
 import { submitCandidateDetails, type CandidateInput } from "@/lib/api";
 
 const PROFILE_CATEGORIES = [
-  "HR & Recruitment",
+  "Talent Acquisition & Sourcing",
   "Payroll",
-  "HR Operations",
-  "Supervisor",
+  "Staffing Operations",
+  "Supervisor / Plant Managers",
   "Administration",
   "Accounts & Finance",
-  "Operations",
-  "Business Development",
-  "Sales",
+  "Apprenticeship Operations",
+  "Business Development / Sales",
   "IT / Tech Support",
 ];
 
@@ -91,7 +90,7 @@ export default function CandidateRegisterPage() {
   const [currentDesignation, setCurrentDesignation] = useState("");
   const [skills, setSkills] = useState("");
 
-  const [profileCategory, setProfileCategory] = useState("HR & Recruitment");
+  const [profileCategory, setProfileCategory] = useState("Talent Acquisition & Sourcing");
   const [preferredRole, setPreferredRole] = useState("");
   const [preferredLocation, setPreferredLocation] = useState("");
   const [currentCtc, setCurrentCtc] = useState("");

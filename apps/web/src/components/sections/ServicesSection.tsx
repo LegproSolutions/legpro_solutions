@@ -49,6 +49,12 @@ const servicesList: Service[] = [
     image: "/service-international.png",
     href: "/international-recruitment",
   },
+  {
+    id: "eor-services",
+    title: "EOR Services",
+    image: "/service-eor.png",
+    href: "/eor-services",
+  },
 ];
 
 export function ServicesSection() {

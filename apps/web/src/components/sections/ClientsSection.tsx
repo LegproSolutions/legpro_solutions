@@ -20,6 +20,9 @@ const partnerStyles: Record<string, { bg: string; border: string; text: string }
   "Kanodia Group": { bg: "rgba(14, 165, 233, 0.1)", border: "rgba(14, 165, 233, 0.3)", text: "#0EA5E9" },
   "ICICI Foundation": { bg: "rgba(249, 115, 22, 0.1)", border: "rgba(249, 115, 22, 0.3)", text: "#F97316" },
   Tecno: { bg: "rgba(37, 99, 235, 0.1)", border: "rgba(37, 99, 235, 0.3)", text: "#2563EB" },
+  "Discus IT": { bg: "rgba(255, 122, 0, 0.1)", border: "rgba(255, 122, 0, 0.3)", text: "#FF7A00" },
+  "AssentCode": { bg: "rgba(10, 102, 194, 0.1)", border: "rgba(10, 102, 194, 0.3)", text: "#0A66C2" },
+  "Shubh Tradex": { bg: "rgba(2, 132, 199, 0.1)", border: "rgba(2, 132, 199, 0.3)", text: "#0284C7" },
 };
 
 const partnerLogos: Record<string, string> = {
@@ -40,6 +43,13 @@ const partnerLogos: Record<string, string> = {
   "Kanodia Group": "/logos/kanodia-group.jpg",
   "ICICI Foundation": "/logos/icici-foundation.png",
   Tecno: "/logos/tecno.jpg",
+  "Incise": "/logos/incise.jpg",
+  "Jupiter Laminators": "/logos/jupiter-laminators.png",
+  "Inkofix": "/logos/inkofix.png",
+  "JPan Tubular": "/logos/jpan-tubular.png",
+  "Discus IT": "/logos/discus-it.png",
+  "AssentCode": "/logos/assentcode.png",
+  "Shubh Tradex": "/logos/shubh-tradex.png",
 };
 
 export function ClientsSection() {

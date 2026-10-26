@@ -45,15 +45,14 @@ const STATUS_OPTIONS = [
 
 const CATEGORY_OPTIONS = [
   "All Categories",
-  "HR & Recruitment",
+  "Talent Acquisition & Sourcing",
   "Payroll",
-  "HR Operations",
-  "Supervisor",
+  "Staffing Operations",
+  "Supervisor / Plant Managers",
   "Administration",
   "Accounts & Finance",
-  "Operations",
-  "Business Development",
-  "Sales",
+  "Apprenticeship Operations",
+  "Business Development / Sales",
   "IT / Tech Support",
 ];
 
@@ -81,7 +80,7 @@ const DEMO_CANDIDATES: CandidateRecord[] = [
     currentCompany: "TalentHub Solutions",
     currentDesignation: "Senior HR Recruiter",
     skills: "End-to-end Recruitment, IT Hiring, Portal Sourcing, Screening",
-    profileCategory: "HR & Recruitment",
+    profileCategory: "Talent Acquisition & Sourcing",
     preferredRole: "Talent Acquisition Lead",
     preferredLocation: "Delhi NCR",
     currentCtc: "5.5 LPA",
@@ -131,7 +130,7 @@ const DEMO_CANDIDATES: CandidateRecord[] = [
     currentCompany: "AutoComponents Corp",
     currentDesignation: "Plant Operations Supervisor",
     skills: "Shop Floor Management, 5S, Industrial Safety, CNC Operations",
-    profileCategory: "Supervisor",
+    profileCategory: "Supervisor / Plant Managers",
     preferredRole: "Assistant Plant Manager",
     preferredLocation: "Pune / Manesar",
     currentCtc: "8.5 LPA",

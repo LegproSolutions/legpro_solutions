@@ -135,7 +135,6 @@ export function ContactSection() {
                         className="hover:text-[#0A66C2] font-bold text-slate-800 transition-colors"
                       >
                         Connect@legpro.co.in
-
                       </a>
                     </p>
                   </div>

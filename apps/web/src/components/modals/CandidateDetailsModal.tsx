@@ -38,15 +38,14 @@ export interface CandidateDetailsModalProps {
 }
 
 export const PROFILE_CATEGORIES = [
-  "HR & Recruitment",
+  "Talent Acquisition & Sourcing",
   "Payroll",
-  "HR Operations",
-  "Supervisor",
+  "Staffing Operations",
+  "Supervisor / Plant Managers",
   "Administration",
   "Accounts & Finance",
-  "Operations",
-  "Business Development",
-  "Sales",
+  "Apprenticeship Operations",
+  "Business Development / Sales",
   "IT / Tech Support",
 ];
 
@@ -103,7 +102,7 @@ export function CandidateDetailsModal({
   const [currentDesignation, setCurrentDesignation] = useState("");
   const [skills, setSkills] = useState("");
 
-  const [profileCategory, setProfileCategory] = useState(initialCategory || "HR & Recruitment");
+  const [profileCategory, setProfileCategory] = useState(initialCategory || "Talent Acquisition & Sourcing");
   const [preferredRole, setPreferredRole] = useState("");
   const [preferredLocation, setPreferredLocation] = useState("");
   const [currentCtc, setCurrentCtc] = useState("");

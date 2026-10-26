@@ -63,11 +63,11 @@ export type ProfileCategory = {
 
 export const FIXED_PROFILE_CATEGORIES: ProfileCategory[] = [
   {
-    id: "hr-recruitment",
+    id: "talent-acquisition-sourcing",
     refNo: "LEG-1001",
-    name: "HR & Recruitment",
+    name: "Talent Acquisition & Sourcing",
     functionGroup: "hr",
-    functionName: "Talent Acquisition & Sourcing",
+    functionName: "Recruitment & Candidate Sourcing",
     icon: Users,
     accent: "from-blue-600 to-indigo-600",
     tagline: "Talent Acquisition & Sourcing",
@@ -93,9 +93,9 @@ export const FIXED_PROFILE_CATEGORIES: ProfileCategory[] = [
     locations: "Noida, Gautam Buddh Nagar, UP, 201301",
   },
   {
-    id: "hr-operations",
+    id: "staffing-operations",
     refNo: "LEG-1003",
-    name: "HR Operations",
+    name: "Staffing Operations",
     functionGroup: "hr",
     functionName: "People Operations & HR Policies",
     icon: UserCheck,
@@ -103,14 +103,14 @@ export const FIXED_PROFILE_CATEGORIES: ProfileCategory[] = [
     tagline: "People Management & HR Policies",
     description:
       "Handles end-to-end employee onboarding, induction, HR records management, attendance systems, employee grievances, and workplace culture.",
-    commonRoles: ["HR Operations Executive", "HR Generalist", "People Operations Associate", "Employee Relations Lead"],
+    commonRoles: ["Staffing Operations Executive", "HR Generalist", "People Operations Associate", "Employee Relations Lead"],
     keySkills: ["Employee Onboarding", "HR Policies", "Documentation", "HRIS", "Exit Management"],
     locations: "Noida, Gautam Buddh Nagar, UP, 201301",
   },
   {
-    id: "supervisor",
+    id: "supervisor-plant-managers",
     refNo: "LEG-1004",
-    name: "Supervisor",
+    name: "Supervisor / Plant Managers",
     functionGroup: "operations",
     functionName: "Manufacturing & Shopfloor Ops",
     icon: Factory,
@@ -159,9 +159,9 @@ export const FIXED_PROFILE_CATEGORIES: ProfileCategory[] = [
     locations: "Noida, Gautam Buddh Nagar, UP, 201301",
   },
   {
-    id: "operations",
+    id: "apprenticeship-operations",
     refNo: "LEG-1007",
-    name: "Operations",
+    name: "Apprenticeship Operations",
     functionGroup: "operations",
     functionName: "Process Management & Logistics",
     icon: Layers,
@@ -174,38 +174,37 @@ export const FIXED_PROFILE_CATEGORIES: ProfileCategory[] = [
     locations: "Noida, Gautam Buddh Nagar, UP, 201301",
   },
   {
-    id: "business-development",
+    id: "business-development-sales",
     refNo: "LEG-1008",
-    name: "Business Development",
+    name: "Business Development / Sales",
     functionGroup: "sales-bd",
-    functionName: "Corporate Alliances & Partnerships",
+    functionName: "Corporate Alliances & Enterprise Sales",
     icon: TrendingUp,
     accent: "from-blue-700 to-indigo-800",
-    tagline: "Client Partnerships & Alliances",
+    tagline: "Client Partnerships & Field Sales",
     description:
-      "Identifies new business opportunities, establishes partnerships with prospective corporate clients, pitches staffing solutions, and negotiates contracts.",
-    commonRoles: ["BD Executive", "Corporate Alliance Manager", "Partnership Lead", "Client Acquisition Specialist"],
-    keySkills: ["Lead Generation", "Client Pitching", "Corporate Alliances", "Contract Negotiation", "Market Research"],
-    locations: "Noida, Gautam Buddh Nagar, UP, 201301",
-  },
-  {
-    id: "sales",
-    refNo: "LEG-1009",
-    name: "Sales",
-    functionGroup: "sales-bd",
-    functionName: "Enterprise & Field Sales",
-    icon: Briefcase,
-    accent: "from-rose-600 to-pink-600",
-    tagline: "Field & Corporate B2B Sales",
-    description:
-      "Drives revenue growth through active client outreach, enterprise sales cycles, proposal presentations, account management, and customer retention.",
-    commonRoles: ["Sales Executive", "Account Executive", "Relationship Manager", "B2B Sales Representative"],
-    keySkills: ["Direct Sales", "Client Relationship", "Objection Handling", "Revenue Targets", "CRM Usage"],
+      "Drives business growth through client acquisitions, corporate alliances, B2B sales cycles, proposal presentations, contract negotiations, and key account management.",
+    commonRoles: [
+      "BD Executive",
+      "Sales Executive",
+      "Corporate Alliance Manager",
+      "Account Executive",
+      "Partnership Lead",
+      "Relationship Manager",
+    ],
+    keySkills: [
+      "B2B & Enterprise Sales",
+      "Lead Generation",
+      "Client Pitching",
+      "Corporate Alliances",
+      "Contract Negotiation",
+      "Account Management",
+    ],
     locations: "Noida, Gautam Buddh Nagar, UP, 201301",
   },
   {
     id: "it-tech-support",
-    refNo: "LEG-1010",
+    refNo: "LEG-1009",
     name: "IT / Tech Support",
     functionGroup: "tech",
     functionName: "IT Hardware, Networking & Systems",
@@ -310,7 +309,7 @@ const PERKS_AND_BENEFITS = [
 
 export function CareersClient() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<string>("HR & Recruitment");
+  const [selectedCategory, setSelectedCategory] = useState<string>("Talent Acquisition & Sourcing");
   const [selectedRole, setSelectedRole] = useState<string>("");
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
@@ -516,11 +515,11 @@ export function CareersClient() {
                 Function:
               </span>
               {[
-                { id: "all", label: "All Profiles (10)" },
+                { id: "all", label: "All Profiles (9)" },
                 { id: "hr", label: "HR & People (3)" },
                 { id: "operations", label: "Operations & Plant (2)" },
                 { id: "finance-admin", label: "Finance & Admin (2)" },
-                { id: "sales-bd", label: "Sales & BD (2)" },
+                { id: "sales-bd", label: "Sales & BD (1)" },
                 { id: "tech", label: "IT & Tech (1)" },
               ].map((pill) => (
                 <button

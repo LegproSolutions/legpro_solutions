@@ -79,6 +79,7 @@ export function Navbar() {
     { label: "BVoc./ DVoc.", href: "/bvoc-dvoc" },
     { label: "Learning Skills", href: "/learning-staffing" },
     { label: "International Recruitment", href: "/international-recruitment" },
+    { label: "EOR Services", href: "/eor-services" },
   ];
 
   const aboutItems: NavDropdownItem[] = site.navigation?.about ?? [];

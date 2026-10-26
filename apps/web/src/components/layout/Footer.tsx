@@ -69,6 +69,7 @@ export function Footer() {
               <li><Link href="/bvoc-dvoc" className="hover:text-accent transition">BVoc./ DVoc.</Link></li>
               <li><Link href="/learning-staffing" className="hover:text-accent transition">Learning Skills</Link></li>
               <li><Link href="/international-recruitment" className="hover:text-accent transition">International Recruitment</Link></li>
+              <li><Link href="/eor-services" className="hover:text-accent transition">EOR Services</Link></li>
             </ul>
           </div>
 

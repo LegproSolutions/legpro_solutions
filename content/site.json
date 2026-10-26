@@ -133,6 +133,13 @@
       "title": "PM Internship Program Facilitation",
       "description": "Facilitating the Prime Minister's Internship Scheme. We bridge the gap between top corporate partners and youth seeking 12-month hands-on internships with monthly stipends.",
       "icon": "Award"
+    },
+    {
+      "id": "eor-services",
+      "number": "09",
+      "title": "Employer of Record (EOR) Services",
+      "description": "Expand your workforce without setting up a local legal entity. LEGPRO Services provides EOR solutions that enable businesses to hire and manage employees efficiently while we handle key employment and HR administration responsibilities.",
+      "icon": "Briefcase"
     }
   ],
   "training": [
@@ -208,7 +215,10 @@
     "Incise",
     "Jupiter Laminators",
     "Inkofix",
-    "JPan Tubular"
+    "JPan Tubular",
+    "Discus IT",
+    "AssentCode",
+    "Shubh Tradex"
   ],
   "social": {
     "facebook": "https://www.facebook.com/legproservices/",
