@@ -255,7 +255,12 @@ const WHY_CHOOSE_ITEMS = [
     icon: Handshake,
   },
   {
-    title: "Focus on Quality, Compliance, and Long-Term Placements",
+    title: "Legally Protected & Verified",
+    desc: "Every candidate profile undergoes extensive credential verification, reference checks, and alignment with country-specific employment acts.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Focus on Quality & Compliance",
     desc: "Strict adherence to statutory emigration laws, visa protocols, and candidates invested in long-term mutual organizational success.",
     icon: Award,
   },
@@ -408,14 +413,14 @@ export default function InternationalRecruitmentClient() {
     <div ref={containerRef} className="relative min-h-screen bg-white">
       {/* Scroll Progress Indicator in Brand Orange */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0A66C2] via-[#FF7A00] to-[#0A66C2] z-50 origin-left shadow-sm"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0A66C2] via-[#FF7A00] to-[#0A66C2] z-50 origin-left shadow-xs"
         style={{ scaleX: scrollYProgress }}
       />
 
       {/* ================================================================= */}
       {/* 1. HERO SECTION */}
       {/* ================================================================= */}
-      <section className="relative overflow-hidden pt-12 pb-10 lg:pt-16 lg:pb-14 border-b border-slate-100 bg-gradient-to-b from-blue-50/50 via-white to-slate-50/40">
+      <section className="relative overflow-hidden pt-6 pb-6 lg:pt-8 lg:pb-8 border-b border-slate-100 bg-gradient-to-b from-blue-50/50 via-white to-slate-50/40">
         {/* Particle Canvas Mesh */}
         <AiMeshNetwork />
 
@@ -423,22 +428,22 @@ export default function InternationalRecruitmentClient() {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-gradient-to-r from-blue-400/10 via-[#FF7A00]/10 to-sky-400/10 blur-3xl pointer-events-none rounded-full" />
 
         <Container className="relative z-10">
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-center max-w-7xl mx-auto">
+          <div className="grid gap-6 lg:gap-8 lg:grid-cols-12 lg:items-center max-w-7xl mx-auto">
             {/* Left Column: Heading & Introduction */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="lg:col-span-7 space-y-6 text-left"
+              className="lg:col-span-7 space-y-3.5 sm:space-y-4 text-left"
             >
               {/* Badge Tag */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-[#0A66C2]/20 bg-blue-50/80 px-4 py-1.5 text-xs sm:text-sm font-semibold text-[#0A66C2] shadow-sm backdrop-blur-sm">
-                <Globe className="h-4 w-4 text-[#FF7A00] animate-spin" style={{ animationDuration: "14s" }} />
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#0A66C2]/20 bg-blue-50/80 px-3.5 py-1 text-xs sm:text-sm font-semibold text-[#0A66C2] shadow-xs backdrop-blur-sm">
+                <Globe className="h-3.5 w-3.5 text-[#FF7A00] animate-spin" style={{ animationDuration: "14s" }} />
                 <span>🌍 International Recruitment Solutions</span>
               </div>
 
               {/* Main Title */}
-              <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-black leading-tight text-slate-900 uppercase tracking-tight">
+              <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-slate-900 uppercase tracking-tight">
                 International <br />
                 <TypewriterText
                   text="Recruitment"
@@ -448,53 +453,37 @@ export default function InternationalRecruitmentClient() {
               </h1>
 
               {/* Subtitle */}
-              <h2 className="text-xl sm:text-2xl font-bold text-[#0A66C2] tracking-wide">
+              <h2 className="text-lg sm:text-xl font-bold text-[#0A66C2] tracking-wide">
                 Connecting Global Talent with Global Opportunities
               </h2>
 
               {/* Lead Introduction Content */}
-              <div className="space-y-4 text-slate-600 font-medium text-base sm:text-lg leading-relaxed">
+              <div className="space-y-2 text-slate-600 font-medium text-xs sm:text-sm leading-relaxed">
                 <p>
                   At <strong className="text-slate-800 font-semibold">LegPro Consultants</strong>, we provide end-to-end international recruitment solutions that help organizations access skilled and qualified talent across global markets. We connect the right people with the right opportunities while ensuring a smooth, compliant, and efficient recruitment process.
                 </p>
-                <p className="text-slate-500 text-sm sm:text-base">
+                <p className="text-slate-500 text-xs sm:text-sm">
                   Whether scaling operations overseas, staffing cross-border infrastructure, or hiring niche executives, our global network delivers proven reliability from talent mapping to international deployment.
                 </p>
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-4 pt-2">
+              <div className="flex flex-wrap items-center gap-3 pt-1">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0A66C2] hover:bg-blue-700 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-600/25 transition-all duration-300 hover:scale-105 active:scale-95"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0A66C2] hover:bg-blue-700 px-5 py-2.5 text-xs sm:text-sm font-bold text-white shadow-md shadow-blue-600/20 transition-all duration-300 hover:scale-105 active:scale-95"
                 >
                   <span>Connect With Our Team</span>
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
 
                 <a
                   href="#services-overview"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 px-6 py-3.5 text-sm font-semibold text-slate-700 transition-all duration-300 hover:border-slate-400"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-700 transition-all duration-300 hover:border-slate-400"
                 >
                   <span>Explore Services</span>
-                  <ChevronRight className="h-4 w-4 text-slate-400" />
+                  <ChevronRight className="h-3.5 w-3.5 text-slate-400" />
                 </a>
-              </div>
-
-              {/* Stat Highlights Bar */}
-              <div className="grid grid-cols-3 gap-4 pt-6 border-t border-slate-200/80 max-w-lg">
-                <div>
-                  <div className="text-2xl font-black text-slate-900">50+</div>
-                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Global Reach</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-black text-[#FF7A00]">100%</div>
-                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Compliant</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-black text-[#0A66C2]">6+</div>
-                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Industries</div>
-                </div>
               </div>
             </motion.div>
 
@@ -505,7 +494,7 @@ export default function InternationalRecruitmentClient() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="lg:col-span-5 relative"
             >
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-slate-900 aspect-square max-w-md mx-auto group">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl border-2 border-white bg-slate-900 aspect-[4/3] sm:aspect-[16/11] max-w-md mx-auto group">
                 <Image
                   src="/service-international.png"
                   alt="LegPro Consultants International Recruitment"
@@ -514,24 +503,24 @@ export default function InternationalRecruitmentClient() {
                   sizes="(max-width: 768px) 100vw, 450px"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
 
                 {/* Floating Bottom Card */}
-                <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-white/50 text-left">
-                  <div className="flex items-center gap-3">
-                    <div className="h-10 w-10 rounded-xl bg-[#0A66C2]/10 border border-[#0A66C2]/20 flex items-center justify-center text-[#0A66C2] shrink-0">
-                      <Globe className="h-5 w-5" />
+                <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md rounded-xl p-3 shadow-md border border-white/50 text-left">
+                  <div className="flex items-center gap-2.5">
+                    <div className="h-8 w-8 rounded-lg bg-[#0A66C2]/10 border border-[#0A66C2]/20 flex items-center justify-center text-[#0A66C2] shrink-0">
+                      <Globe className="h-4 w-4" />
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-slate-900">Global Talent Network</h4>
-                      <p className="text-xs text-slate-500 font-medium">Cross-border hiring with total compliance</p>
+                      <h4 className="text-xs sm:text-sm font-bold text-slate-900">Global Talent Network</h4>
+                      <p className="text-[11px] text-slate-500 font-medium">Cross-border hiring with total compliance</p>
                     </div>
                   </div>
                 </div>
 
                 {/* Floating Top Badge */}
-                <div className="absolute top-4 right-4 bg-[#FF7A00] text-white text-xs font-extrabold px-3 py-1.5 rounded-full shadow-md flex items-center gap-1.5">
-                  <span className="h-2 w-2 rounded-full bg-white animate-ping" />
+                <div className="absolute top-3 right-3 bg-[#FF7A00] text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow-sm flex items-center gap-1.5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-white animate-ping" />
                   <span>Active Placements</span>
                 </div>
               </div>
@@ -543,24 +532,17 @@ export default function InternationalRecruitmentClient() {
       {/* ================================================================= */}
       {/* 2. OUR INTERNATIONAL RECRUITMENT SERVICES */}
       {/* ================================================================= */}
-      <section id="services-overview" className="py-10 lg:py-14 relative bg-white border-b border-slate-100">
+      <section id="services-overview" className="py-6 sm:py-8 lg:py-10 relative bg-white border-b border-slate-100">
         <Container>
           {/* Section Header */}
-          <div className="mb-8 sm:mb-10 text-center max-w-3xl mx-auto">
-            <span className="text-[#FF7A00] text-xs sm:text-sm font-extrabold uppercase tracking-widest block mb-2">
-              Our Core Expertise
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 uppercase tracking-tight">
+          <div className="mb-6 sm:mb-8 text-center max-w-3xl mx-auto">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 uppercase tracking-tight">
               Our International Recruitment Services
             </h2>
-            <div className="mt-4 h-1.5 w-20 bg-gradient-to-r from-[#0A66C2] to-[#FF7A00] rounded-full mx-auto" />
-            <p className="mt-6 text-slate-600 text-base sm:text-lg font-medium leading-relaxed">
-              We engineer specialized cross-border recruitment solutions designed to meet stringent global hiring standards, timelines, and statutory regulations.
-            </p>
           </div>
 
           {/* 6 Services Grid */}
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+          <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
             {SERVICES.map((s, idx) => {
               const IconComponent = s.icon;
               return (
@@ -569,44 +551,34 @@ export default function InternationalRecruitmentClient() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0 }}
-                  transition={{ duration: 0.5, delay: idx * 0.08 }}
-                  className={`group relative flex flex-col justify-between bg-white rounded-3xl p-8 border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 ${s.borderHover}`}
+                  transition={{ duration: 0.5, delay: idx * 0.06 }}
+                  className={`group relative flex flex-col justify-between bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/80 shadow-xs hover:shadow-lg transition-all duration-300 hover:-translate-y-1 ${s.borderHover}`}
                 >
                   <div>
                     {/* Top Row: Icon + Number */}
-                    <div className="flex items-center justify-between mb-6">
-                      <div className={`h-14 w-14 rounded-2xl bg-gradient-to-br ${s.color} border border-slate-100 flex items-center justify-center ${s.iconColor} shadow-inner group-hover:scale-110 transition-transform duration-300`}>
-                        <IconComponent className="h-7 w-7" />
+                    <div className="flex items-center justify-between mb-3">
+                      <div className={`h-11 w-11 rounded-xl bg-gradient-to-br ${s.color} border border-slate-100 flex items-center justify-center ${s.iconColor} shadow-inner group-hover:scale-110 transition-transform duration-300`}>
+                        <IconComponent className="h-5 w-5" />
                       </div>
-                      <span className="text-3xl font-black text-slate-200 group-hover:text-slate-300 transition-colors">
+                      <span className="text-2xl font-black text-slate-200 group-hover:text-slate-300 transition-colors">
                         {s.number}
                       </span>
                     </div>
 
                     {/* Tag Badge */}
-                    <span className="inline-block text-[11px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-3 py-1 rounded-full mb-3">
+                    <span className="inline-block text-[10px] font-bold uppercase tracking-wider text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-full mb-2">
                       {s.tag}
                     </span>
 
                     {/* Service Title */}
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 text-left group-hover:text-[#0A66C2] transition-colors">
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-1.5 text-left group-hover:text-[#0A66C2] transition-colors">
                       {s.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-slate-600 text-sm leading-relaxed text-left mb-6 font-medium">
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed text-left font-medium">
                       {s.desc}
                     </p>
-                  </div>
-
-                  {/* Bullet Points */}
-                  <div className="pt-4 border-t border-slate-100 space-y-2 text-left">
-                    {s.bulletPoints.map((bp, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs font-semibold text-slate-600">
-                        <Check className="h-3.5 w-3.5 text-[#0A66C2] shrink-0" />
-                        <span>{bp}</span>
-                      </div>
-                    ))}
                   </div>
                 </motion.article>
               );
@@ -618,48 +590,41 @@ export default function InternationalRecruitmentClient() {
       {/* ================================================================= */}
       {/* 3. INDUSTRIES WE SERVE */}
       {/* ================================================================= */}
-      <section id="industries" className="py-10 lg:py-14 relative bg-slate-50 border-b border-slate-100">
+      <section id="industries" className="py-6 sm:py-8 lg:py-10 relative bg-slate-50 border-b border-slate-100">
         <Container>
           {/* Header */}
-          <div className="mb-8 sm:mb-10 text-center max-w-3xl mx-auto">
-            <span className="text-[#0A66C2] text-xs sm:text-sm font-extrabold uppercase tracking-widest block mb-2">
-              Domain Specialization
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 uppercase tracking-tight">
+          <div className="mb-6 sm:mb-8 text-center max-w-3xl mx-auto">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 uppercase tracking-tight">
               Industries We Serve
             </h2>
-            <div className="mt-4 h-1.5 w-20 bg-gradient-to-r from-[#FF7A00] to-[#0A66C2] rounded-full mx-auto" />
-            <p className="mt-6 text-slate-600 text-base sm:text-lg font-medium leading-relaxed">
-              We supply specialized talent across a comprehensive range of critical global industries with customized competency screening.
-            </p>
           </div>
 
           {/* 6 Industries Grid */}
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+          <div className="grid gap-3.5 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
             {INDUSTRIES.map((ind, i) => {
               const IconComp = ind.icon;
               const isActive = activeIndustry === i;
               return (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.04 }}
+                  transition={{ duration: 0.35, delay: i * 0.03 }}
                   onMouseEnter={() => setActiveIndustry(i)}
                   onMouseLeave={() => setActiveIndustry(null)}
-                  className={`group relative bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between text-left cursor-pointer ${
+                  className={`group relative bg-white p-4 sm:p-5 rounded-xl border border-slate-200/80 shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between text-left cursor-pointer ${
                     isActive ? "border-[#0A66C2] ring-2 ring-[#0A66C2]/10" : ""
                   }`}
                 >
                   <div>
                     {/* Icon */}
-                    <div className={`h-12 w-12 rounded-xl border flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-110 ${ind.color}`}>
-                      <IconComp className="h-6 w-6" />
+                    <div className={`h-10 w-10 rounded-lg border flex items-center justify-center mb-3 transition-transform duration-300 group-hover:scale-110 ${ind.color}`}>
+                      <IconComp className="h-5 w-5" />
                     </div>
 
                     {/* Title */}
-                    <h3 className="font-bold text-slate-800 text-base mb-2 group-hover:text-[#0A66C2] transition-colors leading-snug">
+                    <h3 className="font-bold text-slate-800 text-sm sm:text-base mb-1 group-hover:text-[#0A66C2] transition-colors leading-snug">
                       {ind.name}
                     </h3>
 
@@ -669,7 +634,7 @@ export default function InternationalRecruitmentClient() {
                     </p>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-[#0A66C2]">
+                  <div className="mt-3 pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-[#0A66C2]">
                     <span>Inquire Roles</span>
                     <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
                   </div>
@@ -681,98 +646,71 @@ export default function InternationalRecruitmentClient() {
       </section>
 
       {/* ================================================================= */}
-      {/* 4. OUR RECRUITMENT PROCESS (ROADMAP) */}
+      {/* 4. OUR RECRUITMENT PROCESS */}
       {/* ================================================================= */}
-      <section id="process" className="py-10 lg:py-14 relative bg-white border-b border-slate-100">
+      <section id="process" className="py-6 sm:py-8 lg:py-10 relative bg-white border-b border-slate-100">
         <Container>
           {/* Header */}
-          <div className="mb-8 sm:mb-10 text-center max-w-3xl mx-auto">
-            <span className="text-[#FF7A00] text-xs sm:text-sm font-extrabold uppercase tracking-widest block mb-2">
-              Structured Roadmap
-            </span>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 uppercase tracking-tight">
+          <div className="mb-6 sm:mb-8 text-center max-w-3xl mx-auto">
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 uppercase tracking-tight">
               Our Recruitment Process
             </h2>
-            <div className="mt-4 h-1.5 w-20 bg-gradient-to-r from-[#0A66C2] to-[#FF7A00] rounded-full mx-auto" />
-            <p className="mt-6 text-slate-600 text-base sm:text-lg font-medium leading-relaxed">
-              From requirement analysis to deployment and onboarding, our 7-step process ensures transparency, speed, and regulatory compliance.
-            </p>
           </div>
 
-          {/* Process Flow Roadmap */}
-          <div className="relative max-w-5xl mx-auto">
-            {/* Timeline center line for desktop */}
-            <div className="hidden lg:block absolute left-1/2 top-8 bottom-8 w-1 bg-gradient-to-b from-[#0A66C2] via-[#FF7A00] to-[#0A66C2] -translate-x-1/2 rounded-full opacity-30" />
-
-            <div className="space-y-8 relative">
-              {RECRUITMENT_PROCESS.map((p, idx) => {
-                const isEven = idx % 2 === 0;
-                return (
-                  <motion.div
-                    key={p.step}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0 }}
-                    transition={{ duration: 0.5, delay: idx * 0.06 }}
-                    className={`relative flex flex-col lg:flex-row items-center ${
-                      isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                    } gap-8`}
-                  >
-                    {/* Content Box */}
-                    <div className="w-full lg:w-1/2">
-                      <div className={`bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-left ${
-                        isEven ? "lg:text-right" : "lg:text-left"
-                      }`}>
-                        <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-50 text-[#0A66C2] mb-3 ${
-                          isEven ? "lg:ml-auto" : ""
-                        }`}>
-                          <span>Phase {p.step}</span>
-                          <span>•</span>
-                          <span>{p.badge}</span>
-                        </div>
-
-                        <h3 className="text-xl font-black text-slate-900 mb-2">
-                          {p.title}
-                        </h3>
-
-                        <p className="text-slate-600 text-sm leading-relaxed font-medium">
-                          {p.desc}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Step Icon / Dot in Center */}
-                    <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-[#0A66C2] to-[#FF7A00] text-white font-black text-base shadow-lg shadow-blue-500/20 shrink-0 border-4 border-white">
+          {/* Process Flow Cards Grid without empty half-screen gaps */}
+          <div className="grid gap-3.5 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-7xl mx-auto">
+            {RECRUITMENT_PROCESS.map((p, idx) => (
+              <motion.div
+                key={p.step}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0 }}
+                transition={{ duration: 0.35, delay: idx * 0.04 }}
+                className={`group relative bg-white p-4 sm:p-5 rounded-2xl border border-slate-200/90 shadow-xs hover:shadow-md hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between ${
+                  idx === 6 ? "sm:col-span-2 lg:col-span-3 xl:col-span-1" : ""
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-2.5">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-[#0A66C2] to-[#FF7A00] text-white font-black text-xs shadow-xs">
                       {p.step}
                     </div>
+                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-blue-50 text-[#0A66C2] border border-blue-100">
+                      {p.badge}
+                    </span>
+                  </div>
 
-                    {/* Empty spacer on opposite side for desktop */}
-                    <div className="hidden lg:block w-1/2" />
-                  </motion.div>
-                );
-              })}
-            </div>
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900 mb-1 group-hover:text-[#0A66C2] transition-colors">
+                    {p.title}
+                  </h3>
+
+                  <p className="text-slate-600 text-xs leading-relaxed font-medium">
+                    {p.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
 
           {/* Quick Flow Summary Chips */}
-          <div className="mt-16 pt-8 border-t border-slate-100 text-center max-w-4xl mx-auto">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
+          <div className="mt-6 pt-4 border-t border-slate-100 text-center max-w-4xl mx-auto">
+            <h4 className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-slate-400 mb-2.5">
               Recruitment Workflow Pipeline
             </h4>
-            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-bold text-slate-700">
-              <span className="px-3.5 py-1.5 rounded-xl bg-slate-100 text-slate-800">Requirement Analysis</span>
+            <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-bold text-slate-700">
+              <span className="px-2.5 sm:px-3 py-1 rounded-lg bg-slate-100 text-slate-800">Requirement Analysis</span>
               <span className="text-[#FF7A00]">→</span>
-              <span className="px-3.5 py-1.5 rounded-xl bg-slate-100 text-slate-800">Talent Sourcing</span>
+              <span className="px-2.5 sm:px-3 py-1 rounded-lg bg-slate-100 text-slate-800">Talent Sourcing</span>
               <span className="text-[#FF7A00]">→</span>
-              <span className="px-3.5 py-1.5 rounded-xl bg-slate-100 text-slate-800">Screening & Shortlisting</span>
+              <span className="px-2.5 sm:px-3 py-1 rounded-lg bg-slate-100 text-slate-800">Screening & Shortlisting</span>
               <span className="text-[#FF7A00]">→</span>
-              <span className="px-3.5 py-1.5 rounded-xl bg-slate-100 text-slate-800">Interviews</span>
+              <span className="px-2.5 sm:px-3 py-1 rounded-lg bg-slate-100 text-slate-800">Interviews</span>
               <span className="text-[#FF7A00]">→</span>
-              <span className="px-3.5 py-1.5 rounded-xl bg-slate-100 text-slate-800">Selection</span>
+              <span className="px-2.5 sm:px-3 py-1 rounded-lg bg-slate-100 text-slate-800">Selection</span>
               <span className="text-[#FF7A00]">→</span>
-              <span className="px-3.5 py-1.5 rounded-xl bg-slate-100 text-slate-800">Documentation</span>
+              <span className="px-2.5 sm:px-3 py-1 rounded-lg bg-slate-100 text-slate-800">Documentation</span>
               <span className="text-[#FF7A00]">→</span>
-              <span className="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#0A66C2] to-blue-600 text-white shadow-sm">
+              <span className="px-2.5 sm:px-3 py-1 rounded-lg bg-gradient-to-r from-[#0A66C2] to-blue-600 text-white shadow-xs">
                 Deployment & Onboarding
               </span>
             </div>
@@ -783,73 +721,57 @@ export default function InternationalRecruitmentClient() {
       {/* ================================================================= */}
       {/* 5. WHY CHOOSE LEGPRO FOR INTERNATIONAL RECRUITMENT? */}
       {/* ================================================================= */}
-      <section id="why-choose" className="py-10 lg:py-14 relative bg-slate-50 border-b border-slate-100">
+      <section id="why-choose" className="py-6 sm:py-8 lg:py-10 relative bg-slate-50 border-b border-slate-100">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-12 items-start max-w-7xl mx-auto">
-            {/* Left Column: Heading & Value Prop */}
-            <div className="lg:col-span-5 space-y-6 text-left lg:sticky lg:top-28">
-              <span className="text-[#0A66C2] text-xs sm:text-sm font-extrabold uppercase tracking-widest block">
-                The LegPro Advantage
-              </span>
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 uppercase tracking-tight">
-                Why Choose LegPro for International Recruitment?
-              </h2>
-              <div className="mt-4 h-1.5 w-20 bg-[#FF7A00] rounded-full" />
+          {/* Header Block arranged vertically at the top */}
+          <div className="mb-6 sm:mb-8 text-center max-w-3xl mx-auto">
+            <span className="text-[#0A66C2] text-xs sm:text-sm font-extrabold uppercase tracking-widest block mb-1">
+              The LegPro Advantage
+            </span>
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 uppercase tracking-tight">
+              Why Choose LegPro for International Recruitment?
+            </h2>
+          </div>
 
-              <p className="text-slate-600 font-medium text-base sm:text-lg leading-relaxed pt-2">
-                Cross-border recruitment requires more than resumes—it demands verified compliance, cultural compatibility, and rigorous vetting. LegPro delivers the infrastructure and accountability global employers depend on.
-              </p>
-
-              <div className="bg-white p-6 rounded-3xl border border-slate-200 shadow-sm space-y-4">
-                <div className="flex items-center gap-3 text-slate-900 font-bold">
-                  <ShieldCheck className="h-6 w-6 text-[#0A66C2]" />
-                  <span>Legally Protected & Verified</span>
-                </div>
-                <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
-                  Every candidate profile undergoes extensive credential verification, reference checks, and alignment with country-specific employment acts.
-                </p>
-              </div>
-
-              <div className="pt-2">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0A66C2] hover:bg-blue-700 px-6 py-3.5 text-sm font-bold text-white shadow-md shadow-blue-600/20 transition-all duration-300 hover:scale-105"
+          {/* Cards arranged vertically with icons on top */}
+          <div className="grid gap-3.5 sm:gap-4 sm:grid-cols-2 lg:grid-cols-4 max-w-7xl mx-auto">
+            {WHY_CHOOSE_ITEMS.map((item, i) => {
+              const IconComp = item.icon;
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0 }}
+                  transition={{ duration: 0.35, delay: i * 0.03 }}
+                  className="group bg-white p-4 sm:p-5 rounded-xl border border-slate-200/80 shadow-xs hover:shadow-md hover:border-[#0A66C2]/40 hover:-translate-y-1 transition-all duration-300 text-left flex flex-col justify-between"
                 >
-                  <span>Request International Talent</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Column: 7 Value Pillars */}
-            <div className="lg:col-span-7 space-y-4">
-              {WHY_CHOOSE_ITEMS.map((item, i) => {
-                const IconComp = item.icon;
-                return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.05 }}
-                    className="group bg-white p-6 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-lg hover:border-[#0A66C2]/40 transition-all duration-300 text-left flex items-start gap-4"
-                  >
-                    <div className="h-12 w-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-[#0A66C2] shrink-0 group-hover:bg-[#0A66C2] group-hover:text-white transition-colors duration-300">
-                      <IconComp className="h-6 w-6" />
+                  <div>
+                    <div className="h-10 w-10 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center text-[#0A66C2] mb-3 group-hover:bg-[#0A66C2] group-hover:text-white transition-colors duration-300">
+                      <IconComp className="h-5 w-5" />
                     </div>
 
-                    <div className="space-y-1.5">
-                      <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-[#0A66C2] transition-colors">
-                        {item.title}
-                      </h3>
-                      <p className="text-slate-600 text-sm leading-relaxed font-medium">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </motion.div>
-                );
-              })}
-            </div>
+                    <h3 className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0A66C2] transition-colors mb-1.5 leading-snug">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-600 text-xs leading-relaxed font-medium">
+                      {item.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* Centered CTA */}
+          <div className="mt-6 sm:mt-8 text-center">
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0A66C2] hover:bg-blue-700 px-6 py-2.5 text-xs sm:text-sm font-bold text-white shadow-xs transition-all duration-300 hover:scale-105"
+            >
+              <span>Request International Talent</span>
+              <ArrowRight className="h-3.5 w-3.5" />
+            </Link>
           </div>
         </Container>
       </section>
@@ -857,89 +779,48 @@ export default function InternationalRecruitmentClient() {
       {/* ================================================================= */}
       {/* 6. CALL TO ACTION: BUILD YOUR GLOBAL WORKFORCE WITH US */}
       {/* ================================================================= */}
-      <section id="contact-cta" className="py-10 lg:py-14 bg-[#0A66C2] text-white relative overflow-hidden">
+      <section id="contact-cta" className="py-6 sm:py-8 lg:py-10 bg-[#0A66C2] text-white relative overflow-hidden">
         {/* Subtle Radial Highlights */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.2),transparent_70%)] pointer-events-none" />
         <div className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-[#FF7A00]/20 blur-3xl pointer-events-none" />
 
         <Container className="relative z-10">
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-center max-w-7xl mx-auto">
-            {/* Left Column */}
-            <div className="lg:col-span-6 space-y-6 text-left">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs sm:text-sm font-extrabold uppercase tracking-widest text-[#FF7A00] border border-white/15">
-                <Globe className="h-4 w-4" />
+          <div className="grid gap-6 lg:gap-8 lg:grid-cols-12 lg:items-center max-w-7xl mx-auto">
+            {/* Left Column: Heading */}
+            <div className="lg:col-span-5 space-y-3 sm:space-y-4 text-left">
+              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[11px] sm:text-xs font-extrabold uppercase tracking-widest text-[#FF7A00] border border-white/15">
+                <Globe className="h-3.5 w-3.5" />
                 <span>Global Partnership</span>
               </div>
 
-              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-tight">
+              <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-black uppercase tracking-tight leading-tight">
                 Build Your Global <br />
                 Workforce With Us
               </h2>
-
-              <p className="text-blue-100 text-base sm:text-lg leading-relaxed font-medium text-justify">
-                Whether you are an international employer looking for skilled talent or a professional seeking global career opportunities, <strong className="text-white">LegPro Consultants</strong> helps make international recruitment simpler, faster, and more reliable.
-              </p>
-
-              <div className="p-6 rounded-2xl bg-white/10 border border-white/15 backdrop-blur-md space-y-2">
-                <h3 className="text-lg font-black text-white">
-                  Looking to hire international talent?
-                </h3>
-                <p className="text-blue-100 text-sm">
-                  Connect with our recruitment team today for immediate candidate availability, country-specific consultation, and deployment estimates.
-                </p>
-              </div>
             </div>
 
-            {/* Right Column: Contact Cards & Quick Direct Channels */}
-            <div className="lg:col-span-6 space-y-6">
-              <div className="bg-white text-slate-900 rounded-3xl p-8 shadow-2xl space-y-6 text-left border border-white/20">
-                <h3 className="text-2xl font-black text-slate-900">
-                  Ready to start hiring globally?
-                </h3>
-                <p className="text-slate-600 text-sm leading-relaxed font-medium">
-                  Speak directly with our senior international staffing consultants or request a swift callback.
+            {/* Right Column: CTA Content */}
+            <div className="lg:col-span-7 space-y-4 text-left">
+              <div className="space-y-3 text-blue-100 text-xs sm:text-sm leading-relaxed font-medium text-justify">
+                <p>
+                  Whether you are an international employer looking for skilled talent or a professional seeking global career opportunities, <strong className="text-white">LegPro Consultants</strong> helps make international recruitment simpler, faster, and more reliable.
                 </p>
+                <p>
+                  Connect with our recruitment team today for immediate candidate availability, country-specific consultation, and deployment estimates across global markets.
+                </p>
+                <p className="font-bold text-white pt-1">
+                  Partner with LegPro Consultants for reliable, fully compliant, and scalable international recruitment solutions that empower your global business growth.
+                </p>
+              </div>
 
-                <div className="space-y-4">
-                  {/* Connect Button */}
-                  <Link
-                    href="/contact"
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-[#0A66C2] hover:bg-blue-700 text-white font-bold py-4 text-sm shadow-lg shadow-blue-600/30 transition-all duration-300 hover:scale-[1.02] active:scale-95"
-                  >
-                    <span>Request Callback / Inquire Now</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-
-                  {/* Direct Phone & WhatsApp */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                    <a
-                      href="tel:7303086551"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-800 font-semibold py-3 px-4 text-xs transition-colors"
-                    >
-                      <Phone className="h-4 w-4 text-[#0A66C2]" />
-                      <span>+91 73030 86551</span>
-                    </a>
-
-                    <a
-                      href={getWhatsAppUrl("Hi LegPro team, I would like to inquire about International Recruitment services.")}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-semibold py-3 px-4 text-xs transition-colors"
-                    >
-                      <MessageCircle className="h-4 w-4 text-[#25d366]" />
-                      <span>Chat on WhatsApp</span>
-                    </a>
-                  </div>
-                </div>
-
-                {/* Email address */}
-                <div className="pt-2 border-t border-slate-100 flex items-center gap-2 text-xs text-slate-500">
-                  <Mail className="h-4 w-4 text-[#0A66C2]" />
-                  <span>Email: </span>
-                  <a href="mailto:Himanshu@legpro.co.in" className="font-bold text-slate-800 hover:text-[#0A66C2] transition-colors">
-                    Himanshu@legpro.co.in
-                  </a>
-                </div>
+              <div className="pt-2">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-white text-[#0A66C2] hover:bg-blue-50 font-bold px-5 py-2.5 text-xs sm:text-sm shadow-md transition-all duration-300 hover:scale-105"
+                >
+                  <span>Connect With Our Team</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
               </div>
             </div>
           </div>

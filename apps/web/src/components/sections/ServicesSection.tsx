@@ -68,7 +68,7 @@ export function ServicesSection() {
           <div className="mt-4 sm:mt-6 h-1 w-16 rounded-full bg-gradient-to-r from-primary to-accent mx-auto" />
         </div>
 
-        <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-8 sm:mt-12 justify-center">
+        <div className="flex flex-wrap justify-center gap-5 sm:gap-6 mt-8 sm:mt-12">
           {servicesList.map((service, index) => {
             return (
               <motion.article
@@ -77,30 +77,31 @@ export function ServicesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.04 }}
-                className="group relative flex flex-col items-center justify-center h-[320px] sm:h-[360px] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 cursor-pointer border border-slate-100"
+                className="group relative flex flex-col items-center justify-center w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] h-[300px] sm:h-[340px] rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-500 cursor-pointer border border-slate-100"
               >
                 {/* Image Background */}
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="eager"
                 />
 
                 {/* Dark Overlay for readability */}
                 <div className="absolute inset-0 bg-black/55 group-hover:bg-black/45 transition-all duration-300" />
 
                 {/* Centered Content */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-10">
-                  <h3 className="text-xl sm:text-2xl font-black text-white tracking-wide leading-snug transition-transform duration-300 group-hover:-translate-y-1 max-w-[280px] mb-4">
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-5 z-10">
+                  <h3 className="text-lg sm:text-xl font-black text-white tracking-wide leading-snug transition-transform duration-300 group-hover:-translate-y-1 max-w-[240px] mb-3 sm:mb-4">
                     {service.title}
                   </h3>
 
                   {/* Know More Button */}
                   <Link
                     href={service.href}
-                    className="inline-flex items-center justify-center rounded-xl bg-blue-500 hover:bg-blue-600 px-7 py-3 text-xs sm:text-sm font-bold text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:scale-105 active:scale-95"
+                    className="inline-flex items-center justify-center rounded-xl bg-blue-500 hover:bg-blue-600 px-6 py-2.5 text-xs sm:text-sm font-bold text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:scale-105 active:scale-95"
                   >
                     <span>Know More</span>
                   </Link>
